@@ -107,7 +107,7 @@ public class ButtleManager {
      */
     private Desicion getDesicion(TagTeamAction teamA, TagTeamAction teamB) {
         RSPEnum[] actions = { teamA.actionA, teamA.actionB, teamB.actionA, teamB.actionB };
-        // RSPEnum[] actions = {RSPEnum.ROCK, RSPEnum.PAPER, RSPEnum.PAPER, RSPEnum.PAPER};
+        // RSPEnum[] actions = {RSPEnum.ROCK, RSPEnum.SCISORS, RSPEnum.SCISORS, RSPEnum.SCISORS};
         RSPEnum[] rsp = RSPEnum.values();
 
         int[] count = { 0, 0, 0 }; // グー・チョキ・パーを出したAgentの数

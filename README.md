@@ -20,6 +20,12 @@
     └── SampleTeam.java
 ```
 
+## 注意
+チームやエージェントを自作する場合は
+`teams/hogehogeteam/hogehogeteam.java`
+`agents/hogehogeagent/hogehogeagent.java`
+のように，パッケージに入れてください
+
 ## ファイルの仕様
 *Note 詳細はファイル
 
