@@ -21,11 +21,16 @@ public class ButtleManager {
         public int teamB_agentA_Score; // bチーム agentAの獲得スコア
         public int teamB_agentB_Score; // bチーム agentBの獲得スコア
 
-        public Desicion(int a1, int a2, int b1, int b2) {
+        public TagTeamAction tagTeamActionA;
+        public TagTeamAction tagTeamActionB;
+        
+        public Desicion(TagTeamAction a, TagTeamAction b, int a1, int a2, int b1, int b2) {
             this.teamA_agentA_Score = a1;
             this.teamA_agentB_Score = a2;
             this.teamB_agentA_Score = b1;
             this.teamB_agentB_Score = b2;
+            this.tagTeamActionA = a;
+            this.tagTeamActionB = b;
         }
 
         /**
@@ -38,10 +43,10 @@ public class ButtleManager {
         public Result toResult(TeamName teamName) {
             if (teamName.equals(TeamName.TeamA)) {
                 return new Result(this.teamA_agentA_Score, this.teamA_agentB_Score, this.teamB_agentA_Score,
-                        this.teamB_agentB_Score);
+                        this.teamB_agentB_Score, this.tagTeamActionA, this.tagTeamActionB);
             }
             return new Result(this.teamB_agentA_Score, this.teamB_agentB_Score, this.teamA_agentA_Score,
-                    this.teamA_agentB_Score);
+                    this.teamA_agentB_Score, this.tagTeamActionB, this.tagTeamActionA);
         }
 
         @Override
@@ -114,7 +119,7 @@ public class ButtleManager {
         for (int j = 0; j < count.length; j++) {
             if (count[j] == 0) flag = false;
         }
-        if(flag) return new Desicion(0,0,0,0);
+        if(flag) return new Desicion(teamA, teamB, 0,0,0,0);
         int[] max = { 0, 0 }; // {num, index}
         for (int j = 0; j < count.length; j++) {
             if (max[0] < count[j]) {
@@ -127,7 +132,7 @@ public class ButtleManager {
         int[] scores = { 0, 0, 0, 0 }; // agentごとの獲得スコア
         switch (max[0]) {
             case 4: // 全エージェントが同じ手を出しているとき
-                return new Desicion(0, 0, 0, 0);
+                return new Desicion(teamA, teamB, 0, 0, 0, 0);
             case 2:
                 for (int j = 0; j < count.length; j++) {
                     if (j == max[1])
@@ -151,7 +156,7 @@ public class ButtleManager {
             if (actions[i] == rsp[winIndex])
                 scores[i]++;
         }
-        return new Desicion(scores[0], scores[1], scores[2], scores[3]);
+        return new Desicion(teamA, teamB, scores[0], scores[1], scores[2], scores[3]);
     }
 
     /**

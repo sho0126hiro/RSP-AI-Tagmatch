@@ -23,14 +23,20 @@ public class Result {
     public int PointOfEnemyAgentA; // 敵のエージェントBの獲得ポイント
     public int PointOfEnemyAgentB; // 敵のエージェントBの獲得ポイント
 
+    public TagTeamAction AllyTeamAction; // 今回出したAが出した手
+    public TagTeamAction EnemyTeamAction; // 今回出したBが出した手
+
     public Result(int pointOfAllyAgentA, int pointOfAllyAgentB, 
-        int pointOfEnemyAgentA, int pointOfEnemyAgentB){
+        int pointOfEnemyAgentA, int pointOfEnemyAgentB, 
+        TagTeamAction tagTeamActionA, TagTeamAction tagTeamActionB){
             this.PointOfAllyAgentA = pointOfAllyAgentA;
             this.PointOfAllyAgentB = pointOfAllyAgentB;
             this.PointOfEnemyAgentA = pointOfEnemyAgentA;
             this.PointOfEnemyAgentB = pointOfEnemyAgentB;
             this.allyPoint = this.PointOfAllyAgentA + this.PointOfAllyAgentB;
             this.enemyPoint = this.PointOfEnemyAgentA + this.PointOfEnemyAgentB;
+            this.AllyTeamAction = tagTeamActionA;
+            this.EnemyTeamAction = tagTeamActionB;
             if(this.allyPoint > this.enemyPoint){
                 this.status = StatusEnum.WIN;
             }else if(this.allyPoint == this.enemyPoint){
