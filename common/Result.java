@@ -17,7 +17,7 @@ public class Result {
     public int allyPoint; // 味方の総獲得ポイント
     public int enemyPoint; // 相手の総獲得ポイント
 
-    // 獲得ポイント: 勝ち => 1, 負け => 2
+    // 獲得ポイント: 勝ち => 1, 負け => 0
     public int PointOfAllyAgentA; // 味方のエージェントAの獲得ポイント
     public int PointOfAllyAgentB; // 味方のエージェントAの獲得ポイント
     public int PointOfEnemyAgentA; // 敵のエージェントBの獲得ポイント
