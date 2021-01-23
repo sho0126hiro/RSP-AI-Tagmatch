@@ -21,9 +21,12 @@
 ```
 
 ## 注意
-チームやエージェントを自作する場合は
-`teams/hogehogeteam/hogehogeteam.java`
-`agents/hogehogeagent/hogehogeagent.java`
+チームを自作する場合は
+`teams/<チーム名(イニシャルなど)>Team.java`
+のようにファイルを追加し、
+
+エージェントを自作する場合は
+`agents/<チーム名(イニシャルなど)>/hogehogeagent.java`
 のように，パッケージに入れてください
 
 ## ファイルの仕様
