@@ -4,11 +4,14 @@ import common.RSPEnum;
 import common.Result;
 import common.TagTeamAction;
 import common.Team;
+import teams.KHTeam;
 import teams.SampleTeam;
 
 public class ButtleManager {
     public Team teamA;
     public Team teamB;
+
+    public static final int NUM_OF_BUTTLES = 2;
 
     public enum TeamName {
         TeamA, TeamB
@@ -170,9 +173,9 @@ public class ButtleManager {
         Desicion d = getDesicion(a, b);
         this.teamA.after(d.toResult(TeamName.TeamA));
         this.teamA.after(d.toResult(TeamName.TeamB));
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(d);
+        // System.out.println(a);
+        // System.out.println(b);
+        // System.out.println(d);
     }
 
     /**
@@ -180,12 +183,15 @@ public class ButtleManager {
      */
     public void run() {
         Team SampleTeam1 = new SampleTeam();
-        Team SampleTeam2 = new SampleTeam();
+        Team KHTeam = new KHTeam();
         // 総当りになるようにする必要あり
-        this.config(SampleTeam1, SampleTeam2);
+        this.config(SampleTeam1, KHTeam);
         this.init();
         // 50000回ループ * 5回戦，結果出力などの処理が必要
-        this.buttle();
+        // テスト用としてNUM_OF_BUTTLES回ループ
+        for(int i=0;i<NUM_OF_BUTTLES; i++){
+            this.buttle();
+        }
     }
 
 }
