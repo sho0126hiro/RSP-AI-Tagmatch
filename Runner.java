@@ -5,7 +5,7 @@
 public class Runner {
     public static void main(String[] args){
         
-        ButtleManager bm = new ButtleManager();
+        BattleManager bm = new BattleManager();
         bm.run();
         
     }
