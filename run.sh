@@ -1,7 +1,4 @@
-rm teams/*.class
-rm agents/*.class
-rm common/*.class
-rm *.class
+find . -name "*.class" | xargs rm
 
 javac Runner.java
 javac agents/*.java

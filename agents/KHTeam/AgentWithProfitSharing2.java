@@ -11,8 +11,10 @@ import common.TagTeamAction;
 
 /**
  * ProfitSharingを用いたエージェント（個人最強型）
+ * 状態数: （多）
+ * これ、学習できないので消します
  */
-public class SingleAgentWithProfitSharing extends Agent {
+public class AgentWithProfitSharing2 extends Agent {
     private KHUtil khUtil = new KHUtil();
     // 状態履歴
     public Queue<State> stateHistory = new ArrayBlockingQueue<State>(M+1); // 2before, 1before, now
@@ -33,9 +35,9 @@ public class SingleAgentWithProfitSharing extends Agent {
             this.i = before2.myAction.getIndex();
             this.j = before2.enemyActionA.getIndex();
             this.k = before2.enemyActionB.getIndex();
-            this.l = before2.myAction.getIndex();
-            this.m = before2.enemyActionA.getIndex();
-            this.n = before2.enemyActionB.getIndex();
+            this.l = before1.myAction.getIndex();
+            this.m = before1.enemyActionA.getIndex();
+            this.n = before1.enemyActionB.getIndex();
             this.o = now.myAction.getIndex();
         }
         @Override
@@ -45,7 +47,7 @@ public class SingleAgentWithProfitSharing extends Agent {
     }
 
     // episode
-    public static final int EPISODE = 10;
+    public static final int EPISODE = 3;
 
     // Episode文の重み更新
     public Queue<Indices> indicesQueue = new ArrayBlockingQueue<Indices>(EPISODE);
@@ -54,11 +56,10 @@ public class SingleAgentWithProfitSharing extends Agent {
         public RSPEnum myAction;
         public RSPEnum enemyActionA;
         public RSPEnum enemyActionB;
-        public State(Result r, String type){
-            if(type.equals("A")) this.myAction = r.AllyTeamAction.actionA;
-            else this.myAction = r.AllyTeamAction.actionB;
-            this.enemyActionA = r.EnemyTeamAction.actionA;
-            this.enemyActionB = r.EnemyTeamAction.actionB;
+        public State(AgentResult r){
+            this.myAction = r.myAction;
+            this.enemyActionA = r.enemyActionA;
+            this.enemyActionB = r.enemyActionB;
         }
         @Override
         public String toString(){
@@ -66,15 +67,15 @@ public class SingleAgentWithProfitSharing extends Agent {
         }
     }
 
-    public SingleAgentWithProfitSharing(){
-        for(int i=0;i<M;i++){
+    public AgentWithProfitSharing2(){
+        for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
                 for(int k=0;k<3;k++){
                     for(int l=0;l<3;l++){
                         for(int m=0;m<3;m++){
                             for(int n=0;n<3;n++){
                                 for(int o=0;o<3;o++){
-                                    this.weight[i][j][k][l][m][n][o] = 0.0;
+                                    this.weight[i][j][k][l][m][n][o] = -1* 1.0;
                                 }
                             }
                         }
@@ -83,11 +84,10 @@ public class SingleAgentWithProfitSharing extends Agent {
             }
         }
 
-        // state 0初期化
-        // indicesQueue: random
+        // state, indicesQueue 0初期化
         for(int i=0;i<EPISODE+M;i++){
             TagTeamAction tta = new TagTeamAction(RSPEnum.ROCK, RSPEnum.ROCK);
-            Result r = new Result(0,0,0,0, tta, tta);
+            AgentResult r = new AgentResult(new Result(0,0,0,0, tta, tta), RSPEnum.ROCK);
             this.addState(r);
             if(this.stateHistory.size()>=M+1) {
                 this.addIndicesQueue(
@@ -96,19 +96,23 @@ public class SingleAgentWithProfitSharing extends Agent {
         }
     }
 
-    public void addState(Result r){
+    public void addState(AgentResult r){
         if(this.stateHistory.size() >= M+1) this.stateHistory.poll();
-        if(this.type == null) this.type = "A"; // 初期状態
-        this.stateHistory.add(new State(r, this.type));
+        this.stateHistory.add(new State(r));
     }
     
-    // {-2, -1, 0}を与える (2人に負けた, 1人に負けた，あいこ or 勝ち)
+    /**
+     * 報酬を与える
+     * @param now 状態
+     * @return {0.0, -1.0, -2.0, -3.0}: 
+     * (一人勝ち、どっちかに勝つ),あいこ, どっちかに負ける、二人に負ける
+     */
     public double getReward(State now){
-        int lose = 0;
-        if(khUtil.RSP1v1(now.myAction, now.enemyActionA) == -1) lose--;
-        if(khUtil.RSP1v1(now.myAction, now.enemyActionB) == -1) lose--;
-        return lose;
+        double r = khUtil.RSP1v3(now.myAction, now.enemyActionA, now.enemyActionB);
+        if(r == -0.5) r = 0.0;
+        return r;
     }
+
     /**
      * 強化関数
      * @param reward
@@ -120,7 +124,7 @@ public class SingleAgentWithProfitSharing extends Agent {
     }
 
     public void addIndicesQueue(List<State> states){
-        if(this.indicesQueue.size() >= EPISODE+1) this.indicesQueue.poll();
+        if(this.indicesQueue.size() >= EPISODE) this.indicesQueue.poll();
         State before2 = states.get(0);
         State before1 = states.get(1);
         State now = states.get(2);
@@ -128,10 +132,11 @@ public class SingleAgentWithProfitSharing extends Agent {
     }
 
     public void updateWeight(double reward){
-        int idx = 0;
-        for(Indices i: this.indicesQueue){
-            this.weight[i.i][i.j][i.k][i.l][i.m][i.n][i.o] += this.reinforceFunction(reward,idx);
-            idx++;
+        int queueSize = this.indicesQueue.size();
+        for(int i=0;i<queueSize; i++){
+            double tmp = this.reinforceFunction(reward, i);
+            Indices id = new ArrayList<Indices>(this.indicesQueue).get(queueSize  - i - 1);
+            this.weight[id.i][id.j][id.k][id.l][id.m][id.n][id.o] += tmp;
         }
     }
 
@@ -139,22 +144,72 @@ public class SingleAgentWithProfitSharing extends Agent {
     public void before() {
     }
 
+    /**
+     * ProfitSharingにおける重みを確率に変換
+     * @param w
+     * @return
+     */
+    public double[] weightToProb(double[] w){
+        double sum = 0.0;
+        for(int i=0;i<w.length;i++){
+            sum += w[i];
+        }
+        double[] problist = new double[w.length];
+        for(int i=0;i<w.length;i++){
+            problist[i] = w[i]/sum; 
+        }
+        double max = -1 * Double.MAX_VALUE;
+        int maxIndex = 0;
+        double min = Double.MAX_VALUE;
+        int minIndex = 0;
+        for(int i=0;i<problist.length;i++){
+            if(max < problist[i]){
+                max = problist[i];
+                maxIndex = i;
+            }
+            if(min > problist[i]){
+                min = problist[i];
+                minIndex = i;
+            }
+        }
+        // exchange
+        double tmp = problist[minIndex];
+        double tmp2 = problist[maxIndex];
+        problist[maxIndex] = tmp; // max <= min
+        problist[minIndex] = tmp2; // min <= max
+        return problist;
+    }
+
     @Override
     public RSPEnum getNextAction() {
         Indices i = new ArrayList<Indices>(this.indicesQueue).get(EPISODE-1);
         double[] w = this.weight[i.i][i.j][i.k][i.l][i.m][i.n];
-        double max = (double) Double.MIN_VALUE;
+        System.out.printf("[getNextAction] ");
+        System.out.println(i);
+        System.out.printf("[getNextAction] ");
+        for(int j=0;j<w.length;j++){
+            System.out.printf("%f ", w[j]);
+        }
+        System.out.println();
+        
+        // 最大のindexを出す
+        double max = (double) -1.0 * Double.MAX_VALUE;
         int idx = 0;
         int tmp=0;
         for(double x: w){
-            if(x > max) idx = tmp;
-            tmp++;  
+            if(x > max){
+                idx = tmp;
+                max = x;
+            }
+            tmp++;
         }
-        return khUtil.idxToRSPEnum(idx);
+
+        return khUtil.choiceRSPEnumByIndex(idx); // 決定的方策
+        // return khUtil.choiceRSPEnumByProb(this.weightToProb(w)); // 確率的方策
     }
 
     @Override
-    public void after(Result r) {        
+    public void after(AgentResult r) {        
         addState(r);
         List<State> states = new ArrayList<State>(this.stateHistory);
         this.addIndicesQueue(states);
@@ -164,14 +219,35 @@ public class SingleAgentWithProfitSharing extends Agent {
     }
 
     public void displayIndicesQueue(){
+        System.out.printf("[displayIndicesQueue] ");
         for(var i : this.indicesQueue){
             System.out.println(i);
         }
     }
 
     public void displayStateHistory(){
+        System.out.printf("displayStateHistory ");
         for(var i : this.stateHistory){
             System.out.println(i);
+        }
+    }
+
+    public void displayWeight(){
+        for(int i=0;i<M;i++){
+            for(int j=0;j<3;j++){
+                for(int k=0;k<3;k++){
+                    for(int l=0;l<3;l++){
+                        for(int m=0;m<3;m++){
+                            for(int n=0;n<3;n++){
+                                for(int o=0;o<3;o++){
+                                    System.out.printf("%f ", this.weight[i][j][k][l][m][n][o]);
+                                }
+                            }
+                        }
+                    }
+                }
+                System.out.println();
+            }
         }
     }
 

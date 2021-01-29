@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 import common.RSPEnum;
 import common.Result;
 import common.TagTeamAction;
@@ -11,7 +9,7 @@ public class ButtleManager {
     public Team teamA;
     public Team teamB;
 
-    public static final int NUM_OF_BUTTLES = 2;
+    public static final int NUM_OF_BUTTLES = 10000;
 
     public enum TeamName {
         TeamA, TeamB
@@ -172,7 +170,7 @@ public class ButtleManager {
         TagTeamAction b = this.teamB.getAction();
         Desicion d = getDesicion(a, b);
         this.teamA.after(d.toResult(TeamName.TeamA));
-        this.teamA.after(d.toResult(TeamName.TeamB));
+        this.teamB.after(d.toResult(TeamName.TeamB));
         // System.out.println(a);
         // System.out.println(b);
         // System.out.println(d);

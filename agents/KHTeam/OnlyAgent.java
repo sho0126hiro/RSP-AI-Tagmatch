@@ -1,7 +1,6 @@
 package agents.KHTeam;
 
 import common.RSPEnum;
-import common.Result;
 
 public class OnlyAgent extends Agent {
     RSPEnum action;
@@ -22,7 +21,7 @@ public class OnlyAgent extends Agent {
     }
 
     @Override
-    public void after(Result r) {
+    public void after(AgentResult r) {
         // TODO Auto-generated method stub
         
     }
