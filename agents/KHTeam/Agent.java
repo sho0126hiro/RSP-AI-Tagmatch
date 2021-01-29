@@ -11,7 +11,7 @@ import common.Result;
  * Team Classから呼ばれるメソッドや、共通メソッドの定義
  */
 public abstract class Agent {
-    public static final int N = 10000; // Queue Capacity
+    public static final int N = 10; // 複数のエージェントから勝率が良かったものを選ぶ間隔
     public static final int M = 2; // 過去の情報を何回持つか
     public Queue<RSPEnum> actionHistory = new ArrayBlockingQueue<RSPEnum>(N); // Agentの行動履歴
     public Queue<AgentResult> resultHistory = new ArrayBlockingQueue<AgentResult>(N);  // Agentが振る舞った後の結果履歴

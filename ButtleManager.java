@@ -9,7 +9,7 @@ public class ButtleManager {
     public Team teamA;
     public Team teamB;
 
-    public static final int NUM_OF_BUTTLES = 100;
+    public static final int NUM_OF_BUTTLES = 10000;
 
     public enum TeamName {
         TeamA, TeamB

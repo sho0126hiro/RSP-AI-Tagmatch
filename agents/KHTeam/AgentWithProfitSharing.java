@@ -92,7 +92,12 @@ public class AgentWithProfitSharing extends Agent {
         this.stateHistory.add(new State(r));
     }
 
-    // {-2, -1, 0}を与える (2人に負けた, 1人に負けた，あいこ or 勝ち)
+    /**
+     * 報酬を与える
+     * @param now 状態
+     * @return {0.0, -1.0, -2.0, -3.0}: 
+     * (一人勝ち、どっちかに勝つ),あいこ, どっちかに負ける、二人に負ける
+     */
     public double getReward(State now) {
         double r = khUtil.RSP1v3(now.myAction, now.enemyActionA, now.enemyActionB);
         if(r == -0.5) r = 0.0;

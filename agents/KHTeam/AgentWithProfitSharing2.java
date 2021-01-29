@@ -11,8 +11,10 @@ import common.TagTeamAction;
 
 /**
  * ProfitSharingを用いたエージェント（個人最強型）
+ * 状態数: （多）
+ * これ、学習できないので消します
  */
-public class AgentWithProfitSharing extends Agent {
+public class AgentWithProfitSharing2 extends Agent {
     private KHUtil khUtil = new KHUtil();
     // 状態履歴
     public Queue<State> stateHistory = new ArrayBlockingQueue<State>(M+1); // 2before, 1before, now
@@ -45,7 +47,7 @@ public class AgentWithProfitSharing extends Agent {
     }
 
     // episode
-    public static final int EPISODE = 5;
+    public static final int EPISODE = 3;
 
     // Episode文の重み更新
     public Queue<Indices> indicesQueue = new ArrayBlockingQueue<Indices>(EPISODE);
@@ -65,7 +67,7 @@ public class AgentWithProfitSharing extends Agent {
         }
     }
 
-    public AgentWithProfitSharing(){
+    public AgentWithProfitSharing2(){
         for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
                 for(int k=0;k<3;k++){
@@ -82,12 +84,7 @@ public class AgentWithProfitSharing extends Agent {
             }
         }
 
-        // for(int i=0;i<3;i++){
-        //     System.out.printf("%f ", this.weight[0][0][0][0][0][0][i]);
-        // }
-        System.out.println();
-        // state 0初期化
-        // indicesQueue: random
+        // state, indicesQueue 0初期化
         for(int i=0;i<EPISODE+M;i++){
             TagTeamAction tta = new TagTeamAction(RSPEnum.ROCK, RSPEnum.ROCK);
             AgentResult r = new AgentResult(new Result(0,0,0,0, tta, tta), RSPEnum.ROCK);
@@ -104,20 +101,18 @@ public class AgentWithProfitSharing extends Agent {
         this.stateHistory.add(new State(r));
     }
     
-    // {-2, -1, 0}を与える (2人に負けた, 1人に負けた，あいこ or 勝ち)
+    /**
+     * 報酬を与える
+     * @param now 状態
+     * @return {0.0, -1.0, -2.0, -3.0}: 
+     * (一人勝ち、どっちかに勝つ),あいこ, どっちかに負ける、二人に負ける
+     */
     public double getReward(State now){
-        // int vsA = khUtil.RSP1v1(now.myAction, now.enemyActionA);
-        // int vsB = khUtil.RSP1v1(now.myAction, now.enemyActionB);
-        // int lose = 0;
-        // if(vsA == 1 && vsB == 1) return 0.0;
-        
-        // if(vsA == -1 && vsB == -1) return -3.0;
-        // if(vsB == -1) lose--;
-        // return lose;
         double r = khUtil.RSP1v3(now.myAction, now.enemyActionA, now.enemyActionB);
-        if(r == 0) return 1000.0;
+        if(r == -0.5) r = 0.0;
         return r;
     }
+
     /**
      * 強化関数
      * @param reward
@@ -137,10 +132,11 @@ public class AgentWithProfitSharing extends Agent {
     }
 
     public void updateWeight(double reward){
-        int idx = 0;
-        for(Indices i: this.indicesQueue){
-            this.weight[i.i][i.j][i.k][i.l][i.m][i.n][i.o] += this.reinforceFunction(reward,idx);
-            idx++;
+        int queueSize = this.indicesQueue.size();
+        for(int i=0;i<queueSize; i++){
+            double tmp = this.reinforceFunction(reward, i);
+            Indices id = new ArrayList<Indices>(this.indicesQueue).get(queueSize  - i - 1);
+            this.weight[id.i][id.j][id.k][id.l][id.m][id.n][id.o] += tmp;
         }
     }
 
@@ -156,7 +152,7 @@ public class AgentWithProfitSharing extends Agent {
     public double[] weightToProb(double[] w){
         double sum = 0.0;
         for(int i=0;i<w.length;i++){
-            sum += w[i]; // -6 -3 ,-2 ,-1
+            sum += w[i];
         }
         double[] problist = new double[w.length];
         for(int i=0;i<w.length;i++){
@@ -197,19 +193,19 @@ public class AgentWithProfitSharing extends Agent {
         System.out.println();
         
         // 最大のindexを出す
-        // double max = (double) -1.0 * Double.MAX_VALUE;
-        // int idx = 0;
-        // int tmp=0;
-        // for(double x: w){
-        //     if(x > max){
-        //         idx = tmp;
-        //         max = x;
-        //     }
-        //     tmp++;
-        // }
+        double max = (double) -1.0 * Double.MAX_VALUE;
+        int idx = 0;
+        int tmp=0;
+        for(double x: w){
+            if(x > max){
+                idx = tmp;
+                max = x;
+            }
+            tmp++;
+        }
 
-        // return khUtil.choiceRSPEnumByIndex(idx); // 決定的方策
-        return khUtil.choiceRSPEnumByProb(this.weightToProb(w));
+        return khUtil.choiceRSPEnumByIndex(idx); // 決定的方策
+        // return khUtil.choiceRSPEnumByProb(this.weightToProb(w)); // 確率的方策
     }
 
     @Override

@@ -11,6 +11,7 @@ import agents.KHTeam.AgentResult;
 import agents.KHTeam.OnlyAgent;
 import agents.KHTeam.Pair;
 import agents.KHTeam.AgentWithProfitSharing;
+import agents.KHTeam.AgentWithProfitSharing2;
 import common.RSPEnum;
 import common.Result;
 import common.TagTeamAction;
@@ -20,7 +21,8 @@ public class KHTeam implements Team {
     private Agent rockAgent;
     private Agent scisorsAgent;
     private Agent paperAgent;
-    private Agent singleAgentWithProfitSharing;
+    private Agent agentWithProfitSharing;
+    private Agent agentWithProfitSharing2;
     
     private Agent agentA;
     private Agent agentB;
@@ -34,13 +36,15 @@ public class KHTeam implements Team {
         this.rockAgent = new OnlyAgent(RSPEnum.ROCK);
         this.scisorsAgent = new OnlyAgent(RSPEnum.SCISORS);
         this.paperAgent = new OnlyAgent(RSPEnum.PAPER);
-        this.singleAgentWithProfitSharing = new AgentWithProfitSharing();
+        this.agentWithProfitSharing = new AgentWithProfitSharing();
+        // this.agentWithProfitSharing2 = new AgentWithProfitSharing2();
 
         this.agents = new ArrayList<Agent>();
         agents.add(this.rockAgent);
         agents.add(this.scisorsAgent);
         agents.add(this.paperAgent);
-        agents.add(this.singleAgentWithProfitSharing);
+        agents.add(this.agentWithProfitSharing);
+        // agents.add(this.agentWithProfitSharing2);
 
         this.agentAndNextAction = new ArrayList<Pair<Agent, RSPEnum>>();
     }
@@ -81,6 +85,7 @@ public class KHTeam implements Team {
             } else if(agent.equals(this.agentB)) {
                 RSPEnum tmp = agent.getNextAction();
                 actionB = tmp;
+                System.out.printf("[getAction Agent B] %s\n", tmp.name());
                 this.agentAndNextAction.add(new Pair<Agent, RSPEnum>(agent, tmp));
             } else {
                 this.agentAndNextAction.add(new Pair<Agent, RSPEnum> (agent, agent.getNextAction()));
