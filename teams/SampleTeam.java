@@ -15,15 +15,15 @@ public class SampleTeam implements Team {
     private SampleAgent agentB;
 
     public void init(){
-        agentA = new SampleAgent(RSPEnum.SCISORS);
-        agentB = new SampleAgent(RSPEnum.ROCK);
+        agentA = new SampleAgent(RSPEnum.PAPER);
+        agentB = new SampleAgent(RSPEnum.SCISORS);
     }
 
     public void before(){
 
     };
     public void after(Result r){
-        System.out.println(r);
+        // System.out.println(r);
     };
 
     public TagTeamAction getAction(){

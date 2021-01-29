@@ -46,7 +46,11 @@ public class Result {
 
     @Override
     public String toString() {
-        return String.format("[status: %s] [Ally] A: %d, B: %d [Enemy] A: %d, B: %d", this.status.name(),
-                this.PointOfAllyAgentA, this.PointOfAllyAgentB, this.PointOfEnemyAgentA, this.PointOfEnemyAgentB);
+        return String.format("[status: %s] [Action: (Ally) A: %s, B: %s (Enemy) A: %s, B: %s] [Point: (Ally) A: %d, B: %d (Enemy) A: %d, B: %d]", 
+            this.status.name(), 
+            this.AllyTeamAction.actionA.name(), this.AllyTeamAction.actionB.name(),
+            this.EnemyTeamAction.actionA.name(), this.EnemyTeamAction.actionB.name(),
+            this.PointOfAllyAgentA, this.PointOfAllyAgentB, 
+            this.PointOfEnemyAgentA, this.PointOfEnemyAgentB);
     }
 }

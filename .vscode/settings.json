@@ -1,0 +1,12 @@
+{
+    "search.exclude": {
+        "*.class": true
+    },
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true,
+        "**/*.class": true
+    },
+}

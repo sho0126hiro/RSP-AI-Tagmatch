@@ -2,50 +2,78 @@ package agents.KHTeam;
 
 import common.RSPEnum;
 import common.Result;
-import common.Result.StatusEnum;
 
 /**
  * 各エージェント自体の対戦結果を示す
  */
 public class AgentResult {
+    private KHUtil khUtil = new KHUtil();
     public RSPEnum myAction; // 自分の行動
-    public RSPEnum allyAction; // 自分以外の味方の行動
     public RSPEnum enemyActionA; // 敵Aの行動
     public RSPEnum enemyActionB; // 敵Bの行動
+    public int isWin; // エージェント対敵 1: エージェントの勝ち、-0: 引き分け, -1: エージェントの負け
 
-    public StatusEnum teamStatus; // チームの勝敗結果
-    public StatusEnum agentStatus; // エージェント個人の勝敗
-    
-    public int allyPoint; // 味方チームの獲得ポイント
-    public int enemyPoint; // 相手チームの獲得ポイント
-
-    public int myPoint; // 自分の獲得ポイント
-
-    // 獲得ポイント: 勝ち => 1, 負け => 0
-    public int PointOfAllyAgentA; // 味方のエージェントAの獲得ポイント
-    public int PointOfAllyAgentB; // 味方のエージェントAの獲得ポイント
-    public int PointOfEnemyAgentA; // 敵のエージェントBの獲得ポイント
-    public int PointOfEnemyAgentB; // 敵のエージェントBの獲得ポイント
-
-    public AgentResult(Result r, String type){
-        if(type.equals("A")){
-            this.myAction = r.AllyTeamAction.actionA;
-            this.allyAction = r.AllyTeamAction.actionB;
-        } else {
-            this.myAction = r.AllyTeamAction.actionB;
-            this.allyAction = r.AllyTeamAction.actionA;
-        }
+    public AgentResult(Result r, RSPEnum myAction){
+        this.myAction = myAction;
         this.enemyActionA = r.EnemyTeamAction.actionA;
         this.enemyActionB = r.EnemyTeamAction.actionB;
+        RSPEnum[] actions = {this.myAction, this.enemyActionA, this.enemyActionB};
+        int[] count = {0,0,0}; 
+        RSPEnum[] rsp = RSPEnum.values();
+        for(int j=0; j<actions.length; j++){
+            count[actions[j].getIndex()]++;
+        }
+        Boolean flag = true;
+        for(int j=0; j<actions.length; j++){
+            if(count[j] == 0) flag = false;
+        }
+        // あいこ
+        if(flag) {
+            this.isWin = 0;
+            return;
+        }
+        int[] max = {0, 0}; // num, index
+        for(int j=0;j<count.length;j++){
+            if(max[0] < count[j]){
+                max[0] = count[j];
+                max[1] = j;
+            }
+        }
+        int tmpIndex = 0;
+        switch(max[0]){
+            case 3:
+                this.isWin = 0; // あいこ
+                return;
+            case 2:
+                if(this.myAction.getIndex() == max[1]){
+                    // 1回しか登場していないやつを探す
+                    for (int j = 0; j < count.length; j++) {
+                        if (j == max[1])
+                            continue;
+                        if (count[j] == 1)
+                            tmpIndex = j;
+                    }
+                    if(khUtil.RSP1v1(rsp[max[1]], rsp[tmpIndex]) == 1) this.isWin = 1;
+                    else this.isWin = -1;
+                    return;
+                } else {
+                    for (int j = 0; j < count.length; j++) {
+                        if (j == max[1])
+                            continue;
+                        if (count[j] == 2)
+                            tmpIndex = j;
+                    }
+                    if(khUtil.RSP1v1(rsp[max[1]], rsp[tmpIndex]) == 1) this.isWin = 1;
+                    else this.isWin = -1;
+                    return;
+                }
+        }
+                
     }
 
-    /**
-     * もし戦っていたら、どの様な結果になっていたかを返す。
-     * @param r
-     * @param myAction: 自分の行動
-     */
-    public AgentResult(Result r, RSPEnum myAction){
-           
+    @Override
+    public String toString(){
+            return "[AgentResult][isWin: "+ this.isWin +"] my: " + myAction.name() + ", enemyA: " + enemyActionA.name() + ", enemyB: " + enemyActionB.name();
     }
 
 }

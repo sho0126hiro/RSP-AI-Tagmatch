@@ -11,32 +11,31 @@ import common.Result;
  * Team Classから呼ばれるメソッドや、共通メソッドの定義
  */
 public abstract class Agent {
-    public static final int N = 10; // Queue Capacity
+    public static final int N = 10000; // Queue Capacity
     public static final int M = 2; // 過去の情報を何回持つか
     public Queue<RSPEnum> actionHistory = new ArrayBlockingQueue<RSPEnum>(N); // Agentの行動履歴
-    public Queue<Result> resultHistory = new ArrayBlockingQueue<Result>(N);;  // Agentが振る舞った後の結果履歴
-    public Queue<Boolean> isWinHistory = new ArrayBlockingQueue<Boolean>(N);; // 過去の勝敗履歴 勝: true
-
-    public String type; // "A" or "B" Teamで出たときにA側にいるかB側にいるか
-
-    public void setType(String t){
-        this.type = t;
-    }
+    public Queue<AgentResult> resultHistory = new ArrayBlockingQueue<AgentResult>(N);  // Agentが振る舞った後の結果履歴
+    public Queue<Integer> isWinHistory = new ArrayBlockingQueue<Integer>(N);; // 過去の勝敗履歴 勝: true
 
     public void addActionHistory(RSPEnum action) {
         if (this.actionHistory.size() >= N) this.actionHistory.poll();
         this.actionHistory.add(action);
     }
 
-    public void addResultHistory(Result result){
+    public void addResultHistory(AgentResult result){
         if(this.resultHistory.size() >= N) this.actionHistory.poll();
         this.resultHistory.add(result);
     }
 
+    public void addIsWinHistory(Integer b){
+        if(this.isWinHistory.size() >= N) this.isWinHistory.poll();
+        this.isWinHistory.add(b);
+    }
+
     public int getNumOfWins(){
         int c =0;
-        for(Boolean b: this.isWinHistory){
-            if(b) c++;
+        for(Integer b: this.isWinHistory){
+            if(b==1) c++;
         }
         return c;
     }
@@ -58,12 +57,12 @@ public abstract class Agent {
      * （this.addResultHistoryなどは呼び出さないように注意）
      * @param 結果
      */
-    public abstract void after(Result r);
+    public abstract void after(AgentResult r);
 
     @Override
     public String toString(){
         String className = this.getClass().getName();
-        return className + ": [NumofWins] " + String.valueOf(getNumOfWins()); 
+        return className + ": [NumOfWins] " + String.valueOf(getNumOfWins()); 
     }
 
 }

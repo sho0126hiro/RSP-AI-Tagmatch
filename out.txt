@@ -1,0 +1,2205 @@
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 0 0 0
+[getNextAction(weight)] -1.000000 -1.000000 -1.000000 
+[weightToProb] 0.333333 0.333333 0.333333 
+[choiceRSPEnumByProb-problist] 0.333333 0.333333 0.333333 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 0 0 0
+[getNextAction(weight)] -5.333333 -1.000000 -1.000000 
+[weightToProb] 0.136364 0.727273 0.136364 
+[choiceRSPEnumByProb-problist] 0.136364 0.727273 0.136364 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -1.000000 -1.000000 -4.000000 
+[weightToProb] 0.666667 0.166667 0.166667 
+[choiceRSPEnumByProb-problist] 0.666667 0.166667 0.166667 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -1.000000 -4.000000 -5.000000 
+[weightToProb] 0.500000 0.400000 0.100000 
+[choiceRSPEnumByProb-problist] 0.500000 0.400000 0.100000 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -1.000000 -8.000000 -5.333333 
+[weightToProb] 0.558140 0.069767 0.372093 
+[choiceRSPEnumByProb-problist] 0.558140 0.069767 0.372093 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -1.000000 -9.444444 -5.333333 
+[weightToProb] 0.598592 0.063380 0.338028 
+[choiceRSPEnumByProb-problist] 0.598592 0.063380 0.338028 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -2.000000 -9.888889 -5.333333 
+[weightToProb] 0.574194 0.116129 0.309677 
+[choiceRSPEnumByProb-problist] 0.574194 0.116129 0.309677 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -3.333333 -10.000000 -5.333333 
+[weightToProb] 0.535714 0.178571 0.285714 
+[choiceRSPEnumByProb-problist] 0.535714 0.178571 0.285714 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -4.777778 -10.000000 -5.333333 
+[weightToProb] 0.497238 0.237569 0.265193 
+[choiceRSPEnumByProb-problist] 0.497238 0.237569 0.265193 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -6.222222 -10.000000 -5.333333 
+[weightToProb] 0.288660 0.247423 0.463918 
+[choiceRSPEnumByProb-problist] 0.288660 0.247423 0.463918 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -10.555556 -10.000000 -5.333333 
+[weightToProb] 0.206009 0.386266 0.407725 
+[choiceRSPEnumByProb-problist] 0.206009 0.386266 0.407725 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -11.888889 -10.000000 -8.333333 
+[weightToProb] 0.275735 0.330882 0.393382 
+[choiceRSPEnumByProb-problist] 0.275735 0.330882 0.393382 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -12.222222 -13.000000 -9.333333 
+[weightToProb] 0.353698 0.270096 0.376206 
+[choiceRSPEnumByProb-problist] 0.353698 0.270096 0.376206 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -12.222222 -14.333333 -9.444444 
+[weightToProb] 0.339506 0.262346 0.398148 
+[choiceRSPEnumByProb-problist] 0.339506 0.262346 0.398148 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -15.222222 -15.666667 -9.444444 
+[weightToProb] 0.377410 0.234160 0.388430 
+[choiceRSPEnumByProb-problist] 0.377410 0.234160 0.388430 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -15.555556 -15.777778 -10.444444 
+[weightToProb] 0.372340 0.250000 0.377660 
+[choiceRSPEnumByProb-problist] 0.372340 0.250000 0.377660 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -18.888889 -15.777778 -11.444444 
+[weightToProb] 0.248193 0.342169 0.409639 
+[choiceRSPEnumByProb-problist] 0.248193 0.342169 0.409639 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -19.888889 -15.777778 -14.777778 
+[weightToProb] 0.292952 0.312775 0.394273 
+[choiceRSPEnumByProb-problist] 0.292952 0.312775 0.394273 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -20.222222 -18.777778 -15.777778 
+[weightToProb] 0.288032 0.342799 0.369168 
+[choiceRSPEnumByProb-problist] 0.288032 0.342799 0.369168 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -20.222222 -19.777778 -19.111111 
+[weightToProb] 0.323308 0.334586 0.342105 
+[choiceRSPEnumByProb-problist] 0.323308 0.334586 0.342105 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -20.222222 -20.111111 -23.111111 
+[weightToProb] 0.318739 0.364273 0.316988 
+[choiceRSPEnumByProb-problist] 0.318739 0.364273 0.316988 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -20.222222 -20.111111 -27.444444 
+[weightToProb] 0.298361 0.404918 0.296721 
+[choiceRSPEnumByProb-problist] 0.298361 0.404918 0.296721 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -20.222222 -20.111111 -28.888889 
+[weightToProb] 0.292135 0.417335 0.290530 
+[choiceRSPEnumByProb-problist] 0.292135 0.417335 0.290530 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -23.222222 -20.111111 -30.222222 
+[weightToProb] 0.315710 0.410876 0.273414 
+[choiceRSPEnumByProb-problist] 0.315710 0.410876 0.273414 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -24.222222 -23.111111 -30.555556 
+[weightToProb] 0.310984 0.392297 0.296719 
+[choiceRSPEnumByProb-problist] 0.310984 0.392297 0.296719 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -24.555556 -27.111111 -30.555556 
+[weightToProb] 0.371622 0.329730 0.298649 
+[choiceRSPEnumByProb-problist] 0.371622 0.329730 0.298649 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -24.555556 -27.555556 -31.555556 
+[weightToProb] 0.377158 0.329349 0.293493 
+[choiceRSPEnumByProb-problist] 0.377158 0.329349 0.293493 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -27.555556 -27.888889 -32.555556 
+[weightToProb] 0.369949 0.316919 0.313131 
+[choiceRSPEnumByProb-problist] 0.369949 0.316919 0.313131 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -28.555556 -27.888889 -35.888889 
+[weightToProb] 0.309266 0.388688 0.302046 
+[choiceRSPEnumByProb-problist] 0.309266 0.388688 0.302046 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -28.666667 -27.888889 -37.222222 
+[weightToProb] 0.305687 0.396919 0.297393 
+[choiceRSPEnumByProb-problist] 0.305687 0.396919 0.297393 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -29.666667 -27.888889 -37.666667 
+[weightToProb] 0.311552 0.395566 0.292882 
+[choiceRSPEnumByProb-problist] 0.311552 0.395566 0.292882 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -33.666667 -27.888889 -38.000000 
+[weightToProb] 0.338170 0.381696 0.280134 
+[choiceRSPEnumByProb-problist] 0.338170 0.381696 0.280134 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -35.000000 -30.888889 -38.000000 
+[weightToProb] 0.336898 0.365775 0.297326 
+[choiceRSPEnumByProb-problist] 0.336898 0.365775 0.297326 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -35.333333 -34.888889 -38.000000 
+[weightToProb] 0.326489 0.351129 0.322382 
+[choiceRSPEnumByProb-problist] 0.326489 0.351129 0.322382 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -35.333333 -39.222222 -38.000000 
+[weightToProb] 0.348470 0.313919 0.337611 
+[choiceRSPEnumByProb-problist] 0.348470 0.313919 0.337611 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -35.333333 -39.666667 -39.000000 
+[weightToProb] 0.347953 0.309942 0.342105 
+[choiceRSPEnumByProb-problist] 0.347953 0.309942 0.342105 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -38.333333 -40.000000 -40.000000 
+[weightToProb] 0.338028 0.323944 0.338028 
+[choiceRSPEnumByProb-problist] 0.338028 0.323944 0.338028 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -39.333333 -43.000000 -40.333333 
+[weightToProb] 0.350543 0.320652 0.328804 
+[choiceRSPEnumByProb-problist] 0.350543 0.320652 0.328804 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -39.444444 -43.333333 -41.333333 
+[weightToProb] 0.349150 0.317816 0.333035 
+[choiceRSPEnumByProb-problist] 0.349150 0.317816 0.333035 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -42.444444 -43.666667 -42.333333 
+[weightToProb] 0.330450 0.329585 0.339965 
+[choiceRSPEnumByProb-problist] 0.330450 0.329585 0.339965 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -43.444444 -46.666667 -42.666667 
+[weightToProb] 0.327197 0.321339 0.351464 
+[choiceRSPEnumByProb-problist] 0.327197 0.321339 0.351464 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -43.555556 -47.000000 -43.666667 
+[weightToProb] 0.350166 0.324503 0.325331 
+[choiceRSPEnumByProb-problist] 0.350166 0.324503 0.325331 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -46.555556 -47.333333 -44.666667 
+[weightToProb] 0.336006 0.322374 0.341620 
+[choiceRSPEnumByProb-problist] 0.336006 0.322374 0.341620 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -46.888889 -48.333333 -44.777778 
+[weightToProb] 0.334921 0.319841 0.345238 
+[choiceRSPEnumByProb-problist] 0.334921 0.319841 0.345238 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -50.222222 -49.333333 -44.777778 
+[weightToProb] 0.310239 0.341801 0.347960 
+[choiceRSPEnumByProb-problist] 0.310239 0.341801 0.347960 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -51.222222 -52.666667 -44.777778 
+[weightToProb] 0.344544 0.301196 0.354260 
+[choiceRSPEnumByProb-problist] 0.344544 0.301196 0.354260 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -51.333333 -53.000000 -45.777778 
+[weightToProb] 0.341969 0.304959 0.353072 
+[choiceRSPEnumByProb-problist] 0.341969 0.304959 0.353072 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -54.333333 -53.333333 -46.777778 
+[weightToProb] 0.302878 0.345324 0.351799 
+[choiceRSPEnumByProb-problist] 0.302878 0.345324 0.351799 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -54.666667 -53.333333 -47.888889 
+[weightToProb] 0.307199 0.342124 0.350677 
+[choiceRSPEnumByProb-problist] 0.307199 0.342124 0.350677 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -58.000000 -53.333333 -48.888889 
+[weightToProb] 0.305132 0.332871 0.361997 
+[choiceRSPEnumByProb-problist] 0.305132 0.332871 0.361997 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -59.000000 -53.333333 -52.222222 
+[weightToProb] 0.317353 0.324105 0.358542 
+[choiceRSPEnumByProb-problist] 0.317353 0.324105 0.358542 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -59.333333 -56.333333 -53.222222 
+[weightToProb] 0.315132 0.333553 0.351316 
+[choiceRSPEnumByProb-problist] 0.315132 0.333553 0.351316 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -59.333333 -57.666667 -53.333333 
+[weightToProb] 0.313112 0.338552 0.348337 
+[choiceRSPEnumByProb-problist] 0.313112 0.338552 0.348337 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -62.333333 -59.000000 -53.333333 
+[weightToProb] 0.305344 0.337786 0.356870 
+[choiceRSPEnumByProb-problist] 0.305344 0.337786 0.356870 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -63.333333 -62.333333 -53.333333 
+[weightToProb] 0.297952 0.348231 0.353818 
+[choiceRSPEnumByProb-problist] 0.297952 0.348231 0.353818 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -63.666667 -63.333333 -56.333333 
+[weightToProb] 0.307273 0.345455 0.347273 
+[choiceRSPEnumByProb-problist] 0.307273 0.345455 0.347273 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -63.666667 -63.666667 -60.333333 
+[weightToProb] 0.321492 0.339254 0.339254 
+[choiceRSPEnumByProb-problist] 0.321492 0.339254 0.339254 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -63.666667 -66.666667 -61.666667 
+[weightToProb] 0.331597 0.321181 0.347222 
+[choiceRSPEnumByProb-problist] 0.331597 0.321181 0.347222 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -63.666667 -68.000000 -61.777778 
+[weightToProb] 0.329121 0.319357 0.351522 
+[choiceRSPEnumByProb-problist] 0.329121 0.319357 0.351522 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -64.666667 -68.444444 -61.777778 
+[weightToProb] 0.331813 0.316990 0.351197 
+[choiceRSPEnumByProb-problist] 0.331813 0.316990 0.351197 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -66.000000 -68.555556 -61.777778 
+[weightToProb] 0.336163 0.314658 0.349179 
+[choiceRSPEnumByProb-problist] 0.336163 0.314658 0.349179 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -70.333333 -68.555556 -61.777778 
+[weightToProb] 0.307863 0.341639 0.350498 
+[choiceRSPEnumByProb-problist] 0.307863 0.341639 0.350498 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -70.777778 -69.555556 -61.777778 
+[weightToProb] 0.305662 0.344145 0.350192 
+[choiceRSPEnumByProb-problist] 0.305662 0.344145 0.350192 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -74.111111 -70.555556 -61.777778 
+[weightToProb] 0.299247 0.341765 0.358988 
+[choiceRSPEnumByProb-problist] 0.299247 0.341765 0.358988 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -75.111111 -73.888889 -61.777778 
+[weightToProb] 0.293094 0.350554 0.356352 
+[choiceRSPEnumByProb-problist] 0.293094 0.350554 0.356352 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -75.222222 -74.222222 -62.777778 
+[weightToProb] 0.295812 0.349738 0.354450 
+[choiceRSPEnumByProb-problist] 0.295812 0.349738 0.354450 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -78.222222 -74.555556 -63.777778 
+[weightToProb] 0.294510 0.344279 0.361211 
+[choiceRSPEnumByProb-problist] 0.294510 0.344279 0.361211 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -78.555556 -74.555556 -64.888889 
+[weightToProb] 0.297655 0.341998 0.360347 
+[choiceRSPEnumByProb-problist] 0.297655 0.341998 0.360347 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -81.888889 -74.555556 -65.888889 
+[weightToProb] 0.296352 0.335332 0.368316 
+[choiceRSPEnumByProb-problist] 0.296352 0.335332 0.368316 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -82.888889 -74.555556 -69.222222 
+[weightToProb] 0.305392 0.328922 0.365686 
+[choiceRSPEnumByProb-problist] 0.305392 0.328922 0.365686 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -83.222222 -74.555556 -73.222222 
+[weightToProb] 0.316979 0.322751 0.360269 
+[choiceRSPEnumByProb-problist] 0.316979 0.322751 0.360269 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -83.222222 -77.555556 -74.555556 
+[weightToProb] 0.316808 0.329556 0.353636 
+[choiceRSPEnumByProb-problist] 0.316808 0.329556 0.353636 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -83.222222 -77.888889 -75.666667 
+[weightToProb] 0.319568 0.328954 0.351478 
+[choiceRSPEnumByProb-problist] 0.319568 0.328954 0.351478 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -86.222222 -78.222222 -76.666667 
+[weightToProb] 0.317972 0.324424 0.357604 
+[choiceRSPEnumByProb-problist] 0.317972 0.324424 0.357604 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -87.222222 -81.222222 -77.000000 
+[weightToProb] 0.313717 0.330919 0.355364 
+[choiceRSPEnumByProb-problist] 0.313717 0.330919 0.355364 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -87.555556 -82.222222 -80.000000 
+[weightToProb] 0.320285 0.329181 0.350534 
+[choiceRSPEnumByProb-problist] 0.320285 0.329181 0.350534 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -87.555556 -85.555556 -81.000000 
+[weightToProb] 0.318758 0.336686 0.344556 
+[choiceRSPEnumByProb-problist] 0.318758 0.336686 0.344556 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -87.555556 -89.555556 -81.333333 
+[weightToProb] 0.338779 0.314703 0.346518 
+[choiceRSPEnumByProb-problist] 0.338779 0.314703 0.346518 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -87.555556 -90.000000 -82.333333 
+[weightToProb] 0.336896 0.316802 0.346302 
+[choiceRSPEnumByProb-problist] 0.336896 0.316802 0.346302 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -90.555556 -90.333333 -83.333333 
+[weightToProb] 0.315391 0.341884 0.342725 
+[choiceRSPEnumByProb-problist] 0.315391 0.341884 0.342725 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -90.888889 -90.333333 -84.444444 
+[weightToProb] 0.317859 0.340025 0.342116 
+[choiceRSPEnumByProb-problist] 0.317859 0.340025 0.342116 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -92.000000 -90.333333 -84.777778 
+[weightToProb] 0.317388 0.338186 0.344426 
+[choiceRSPEnumByProb-problist] 0.317388 0.338186 0.344426 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -96.000000 -90.333333 -85.111111 
+[weightToProb] 0.313549 0.332788 0.353664 
+[choiceRSPEnumByProb-problist] 0.313549 0.332788 0.353664 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -96.444444 -90.333333 -86.111111 
+[weightToProb] 0.315554 0.331026 0.353420 
+[choiceRSPEnumByProb-problist] 0.315554 0.331026 0.353420 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -97.555556 -90.333333 -86.444444 
+[weightToProb] 0.315107 0.329283 0.355610 
+[choiceRSPEnumByProb-problist] 0.315107 0.329283 0.355610 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -101.555556 -90.333333 -86.777778 
+[weightToProb] 0.311404 0.324163 0.364434 
+[choiceRSPEnumByProb-problist] 0.311404 0.324163 0.364434 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -102.888889 -90.333333 -89.777778 
+[weightToProb] 0.317236 0.319199 0.363565 
+[choiceRSPEnumByProb-problist] 0.317236 0.319199 0.363565 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -103.222222 -90.333333 -93.777778 
+[weightToProb] 0.314385 0.359242 0.326373 
+[choiceRSPEnumByProb-problist] 0.314385 0.359242 0.326373 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -103.222222 -90.333333 -98.111111 
+[weightToProb] 0.309714 0.353905 0.336381 
+[choiceRSPEnumByProb-problist] 0.309714 0.353905 0.336381 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -103.222222 -90.333333 -102.444444 
+[weightToProb] 0.305180 0.348724 0.346096 
+[choiceRSPEnumByProb-problist] 0.305180 0.348724 0.346096 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -103.222222 -93.333333 -103.777778 
+[weightToProb] 0.343692 0.345542 0.310766 
+[choiceRSPEnumByProb-problist] 0.343692 0.345542 0.310766 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -103.222222 -94.666667 -103.888889 
+[weightToProb] 0.342047 0.344256 0.313697 
+[choiceRSPEnumByProb-problist] 0.342047 0.344256 0.313697 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -104.222222 -95.111111 -103.888889 
+[weightToProb] 0.313668 0.343716 0.342616 
+[choiceRSPEnumByProb-problist] 0.313668 0.343716 0.342616 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -108.222222 -95.444444 -103.888889 
+[weightToProb] 0.310332 0.351879 0.337789 
+[choiceRSPEnumByProb-problist] 0.310332 0.351879 0.337789 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -108.666667 -96.444444 -103.888889 
+[weightToProb] 0.312118 0.351672 0.336210 
+[choiceRSPEnumByProb-problist] 0.312118 0.351672 0.336210 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -109.777778 -96.777778 -103.888889 
+[weightToProb] 0.311739 0.353615 0.334646 
+[choiceRSPEnumByProb-problist] 0.311739 0.353615 0.334646 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -113.777778 -97.111111 -103.888889 
+[weightToProb] 0.308507 0.361454 0.330039 
+[choiceRSPEnumByProb-problist] 0.308507 0.361454 0.330039 
+[getAction Agent A] PAPER
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: PAPER, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 1
+[getNextAction(weight)] -115.111111 -100.111111 -103.888889 
+[weightToProb] 0.313719 0.360724 0.325557 
+[choiceRSPEnumByProb-problist] 0.313719 0.360724 0.325557 
+[getAction Agent A] ROCK
+after--------------------------------------------------
+[getReward] -1.000000
+[after] [AgentResult][isWin: 0] my: ROCK, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 2
+[getNextAction(weight)] -115.222222 -100.444444 -104.888889 
+[weightToProb] 0.313345 0.359445 0.327210 
+[choiceRSPEnumByProb-problist] 0.313345 0.359445 0.327210 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
+Before--------------------------------------------------
+[setNextAgent][agents.KHTeam.OnlyAgent: [NumOfWins] 0, agents.KHTeam.AgentWithProfitSharing: [NumOfWins] 0]
+getAction--------------------------------------------------
+[getNextAction(Index)] [Indices] 2 1 0
+[getNextAction(weight)] -118.222222 -100.777778 -105.888889 
+[weightToProb] 0.310192 0.363885 0.325923 
+[choiceRSPEnumByProb-problist] 0.310192 0.363885 0.325923 
+[getAction Agent A] SCISORS
+after--------------------------------------------------
+true
+true
+true
+5
+true
+true
+true
+5
+true
+true
+true
+5
+[RSP1vs3] AvsB: -1, AvsC: -1
+[getReward] -3.000000
+[after] true
+true
+true
+5
+[AgentResult][isWin: -1] my: SCISORS, enemyA: PAPER, enemyB: SCISORS
