@@ -6,7 +6,7 @@ import common.TagTeamAction;
 import common.Team;
 import teams.SampleTeam;
 
-public class ButtleManager {
+public class BattleManager {
     public Team teamA;
     public Team teamB;
 
