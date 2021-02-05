@@ -164,7 +164,7 @@ public class BattleManager {
     /**
      * 対戦を行う
      */
-    private void buttle() {
+    private boolean buttle(int k) {
         this.teamA.before();
         this.teamB.before();
         TagTeamAction a = this.teamA.getAction();
@@ -175,7 +175,11 @@ public class BattleManager {
         /*System.out.println(a);
         System.out.println(b);
         System.out.println(d);*/
-        System.out.println(String.format("%d, %d, %d, %d", d.teamA_agentA_Score, d.teamA_agentB_Score, d.teamB_agentA_Score, d.teamB_agentB_Score));
+        System.out.println(String.format("%d, %d, %d, %d, %d", k, d.teamA_agentA_Score, d.teamA_agentB_Score, d.teamB_agentA_Score, d.teamB_agentB_Score));
+
+        // あいことなる条件をやや無理やり実装
+        return !(d.teamA_agentA_Score == 0 && d.teamA_agentB_Score == 0 &&
+          d.teamB_agentA_Score == 0 && d.teamB_agentB_Score == 0);
     }
 
     class SampleTeam2 extends SampleTeam{}
@@ -194,9 +198,11 @@ public class BattleManager {
                 this.init();
                 var teamAName=teams[i].getClass().getSimpleName();
                 var teamBName=teams[j].getClass().getSimpleName();
-                System.out.println("\n"+teamAName+"のAの獲得スコア, "+teamAName+"のBの獲得スコア, "+teamBName+"のAの獲得スコア, "+teamBName+"のBの獲得スコア");
-                for(int k = 0; k<50000;k++){
-                    this.buttle();
+                System.out.println("\n回数, "+teamAName+"のAの獲得スコア, "+teamAName+"のBの獲得スコア, "+teamBName+"のAの獲得スコア, "+teamBName+"のBの獲得スコア");
+                for(int k = 0; k<50000;){
+                  if(this.buttle(k)){
+                    k++;
+                  }
                 }
             }
         }
