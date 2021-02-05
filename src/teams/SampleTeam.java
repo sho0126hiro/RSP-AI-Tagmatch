@@ -23,7 +23,7 @@ public class SampleTeam implements Team {
   };
 
   public void after(Result r) {
-    System.out.println(r);
+    //System.out.println(r);
   };
 
   public TagTeamAction getAction() {

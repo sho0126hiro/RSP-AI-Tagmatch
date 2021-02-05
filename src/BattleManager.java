@@ -80,25 +80,26 @@ public class BattleManager {
         return false;
     }
 
+    public static RSPEnum winnerOf(RSPEnum r) {
+      switch (r) {
+        case ROCK:
+          return RSPEnum.PAPER;
+  
+        case SCISORS:
+          return RSPEnum.ROCK;
+  
+        case PAPER:
+          return RSPEnum.SCISORS;
+      }
+      return r;
+    }
+
     // aがbに勝っているときtrue
     // あいこは勝っていないのでfalse
     public boolean isWin2v2(RSPEnum a, RSPEnum b) {
-        switch (a) {
-            case ROCK:
-                if (b.equals(RSPEnum.PAPER))
-                    return false;
-                if (b.equals(RSPEnum.SCISORS))
-                    return true;
-            case SCISORS:
-                if (b.equals(RSPEnum.ROCK))
-                    return false;
-                if (b.equals(RSPEnum.PAPER))
-                    return true;
-            case PAPER:
-                if (b.equals(RSPEnum.SCISORS))
-                    return false;
-                if (b.equals(RSPEnum.ROCK))
-                    return true;
+        var winner = winnerOf(a);
+        if(b.equals(winner)){
+            return true;
         }
         return false;
     }
@@ -170,23 +171,37 @@ public class BattleManager {
         TagTeamAction b = this.teamB.getAction();
         Desicion d = getDesicion(a, b);
         this.teamA.after(d.toResult(TeamName.TeamA));
-        this.teamA.after(d.toResult(TeamName.TeamB));
-        System.out.println(a);
+        this.teamB.after(d.toResult(TeamName.TeamB));
+        /*System.out.println(a);
         System.out.println(b);
-        System.out.println(d);
+        System.out.println(d);*/
+        System.out.println(String.format("%d, %d, %d, %d", d.teamA_agentA_Score, d.teamA_agentB_Score, d.teamB_agentA_Score, d.teamB_agentB_Score));
     }
+
+    class SampleTeam2 extends SampleTeam{}
 
     /**
      * チーム設定および対戦の実行
      */
     public void run() {
-        Team SampleTeam1 = new KimotoSumizome();
-        Team SampleTeam2 = new SampleTeam();
+        // ここにチームインスタンスを置く
+        Team[] teams = {new KimotoSumizome(), new SampleTeam(), new SampleTeam2()};
         // 総当りになるようにする必要あり
-        this.config(SampleTeam1, SampleTeam2);
-        this.init();
         // 50000回ループ * 5回戦，結果出力などの処理が必要
-        this.buttle();
+        for(int i = 0; i<teams.length;i++){
+            for(int j = i+1; j<teams.length;j++){
+                this.config(teams[i], teams[j]);
+                this.init();
+                var teamAName=teams[i].getClass().getSimpleName();
+                var teamBName=teams[j].getClass().getSimpleName();
+                System.out.println("\n"+teamAName+"のAの獲得スコア, "+teamAName+"のBの獲得スコア, "+teamBName+"のAの獲得スコア, "+teamBName+"のBの獲得スコア");
+                for(int k = 0; k<50000;k++){
+                    this.buttle();
+                }
+            }
+        }
+        // CSVで出力します
+        // バトルが切り替わったタイミングでは"\n\n"が入るので簡単に分割できるはず
     }
 
 }
