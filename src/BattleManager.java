@@ -10,6 +10,11 @@ import teams.KimotoSumizome;
 public class BattleManager {
     public Team teamA;
     public Team teamB;
+    private boolean ignoresAiko;
+
+    public BattleManager(boolean ignoresAiko) {
+      this.ignoresAiko = ignoresAiko; 
+    }
 
     public enum TeamName {
         TeamA, TeamB
@@ -172,17 +177,26 @@ public class BattleManager {
         Desicion d = getDesicion(a, b);
         this.teamA.after(d.toResult(TeamName.TeamA));
         this.teamB.after(d.toResult(TeamName.TeamB));
+
+        // あいことなる条件をやや無理やり実装
+        var isAiko = d.teamA_agentA_Score == 0 && d.teamA_agentB_Score == 0 &&
+          d.teamB_agentA_Score == 0 && d.teamB_agentB_Score == 0;
+
         /*System.out.println(a);
         System.out.println(b);
         System.out.println(d);*/
-        System.out.println(String.format("%d, %d, %d, %d, %d", k, d.teamA_agentA_Score, d.teamA_agentB_Score, d.teamB_agentA_Score, d.teamB_agentB_Score));
+        if(!isAiko || !ignoresAiko){
+          System.out.println(String.format("%d, %d, %d, %d, %d", k, d.teamA_agentA_Score, d.teamA_agentB_Score, d.teamB_agentA_Score, d.teamB_agentB_Score));
+        }
 
-        // あいことなる条件をやや無理やり実装
-        return !(d.teamA_agentA_Score == 0 && d.teamA_agentB_Score == 0 &&
-          d.teamB_agentA_Score == 0 && d.teamB_agentB_Score == 0);
+        return !isAiko;
     }
 
-    class SampleTeam2 extends SampleTeam{}
+    class SampleTeam2 extends SampleTeam {
+      public TagTeamAction getAction() {
+        return new TagTeamAction(RSPEnum.ROCK, RSPEnum.PAPER);
+      };
+    }
 
     /**
      * チーム設定および対戦の実行
