@@ -5,6 +5,7 @@ import common.Result;
 import common.TagTeamAction;
 import common.Team;
 import teams.SampleTeam;
+import teams.KimotoSumizome;
 
 public class BattleManager {
     public Team teamA;
@@ -179,7 +180,7 @@ public class BattleManager {
      * チーム設定および対戦の実行
      */
     public void run() {
-        Team SampleTeam1 = new SampleTeam();
+        Team SampleTeam1 = new KimotoSumizome();
         Team SampleTeam2 = new SampleTeam();
         // 総当りになるようにする必要あり
         this.config(SampleTeam1, SampleTeam2);
