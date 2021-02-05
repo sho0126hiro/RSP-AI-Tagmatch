@@ -1,6 +1,9 @@
 package agents;
 
 import common.RSPEnum;
+import common.Result;
+
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -8,8 +11,8 @@ import java.util.Random;
  */
 public class IwasakiAgent {
     public static final double EPSILON = 0.1;
-    public static final double ALPHA = 0.1;
-    public static final double GAMMA = 0.9;
+    public static final double ALPHA = 0.2;
+    public static final double GAMMA = 0.0;
     public static final String[] RSPMAP = {"ROCK", "SCISORS", "PAPER"};
 
     // Q値は【自分の現在の手＆味方の現在の手】【相手チームの手】【味方の次の手＆自分の次の手】
@@ -35,15 +38,21 @@ public class IwasakiAgent {
         for(int i=0; i<9; i++){
             for(int j=0; j<9; j++){
                 for(int k=0; k<3; k++){
-                    this.q[i][j][k] = rnd.nextDouble();
+                    this.q[i][j][k] = rnd.nextDouble()*0.1 - 0.05;
                 }
             }
         }
         return;
     }
 
-    public void update(RSPEnum teamA1, RSPEnum teamA2, RSPEnum teamB1, RSPEnum teamB2) {
+    public void update(Result result) {
         double reward=0.0;
+
+        RSPEnum teamA1 = result.AllyTeamAction.actionA;
+        RSPEnum teamA2 = result.AllyTeamAction.actionB;
+        RSPEnum teamB1 = result.EnemyTeamAction.actionA;
+        RSPEnum teamB2 = result.EnemyTeamAction.actionB;
+
         int maxIndex = -1;
         int myTeam = teamA1.getIndex()*3 + teamA2.getIndex();
         int oppTeam = teamB1.getIndex()*3 + teamB2.getIndex();
@@ -52,11 +61,11 @@ public class IwasakiAgent {
 
         // 勝ち負けを判定して報酬を決定する
         if (isWin(teamA1, teamA2, teamB1, teamB2)) {
-            reward = 1;
+            reward = 1.0;
         } else if (isLoose(teamA1, teamA2, teamB1, teamB2)) {
-            reward = -1;
+            reward = -1.0;
         } else if (isDraw(teamA1, teamA2, teamB1, teamB2)) {
-            reward = 0;
+            reward = 0.0;
         }
 
         // 出された手から，最大になるQ値のインデックスを取得
@@ -68,10 +77,19 @@ public class IwasakiAgent {
             }
         }
 
-        // Q値の更新
-        q[myTeamOld][oppTeamOld][this.teamA1.getIndex()] = 
-            (1-ALPHA) * q[myTeamOld][oppTeamOld][this.teamA1.getIndex()]
-            + ALPHA * (reward + GAMMA * q[myTeam][oppTeam][maxIndex]);
+        if (reward != 0.0) {
+            // Q値の更新
+            q[myTeamOld][oppTeamOld][teamA1.getIndex()] = 
+                (1-ALPHA) * q[myTeamOld][oppTeamOld][teamA1.getIndex()]
+                + ALPHA * (reward + GAMMA * q[myTeam][oppTeam][maxIndex]);
+        }
+
+        System.out.println(reward);
+        System.out.println(myTeamOld);
+        System.out.println(oppTeamOld);
+        System.out.println(Arrays.toString(q[0][0]));
+        System.out.println(Arrays.toString(q[1][0]));
+        System.out.println(Arrays.toString(q[2][0]));
 
         this.teamA1 = teamA1;
         this.teamA2 = teamA2;
@@ -152,10 +170,8 @@ public class IwasakiAgent {
                     maxIndex = currIndex;
                 }
             }
-            System.out.println("at greedy");
         } else {
             maxIndex = rnd.nextInt(2);
-            System.out.println("at eplison");
         }
 
         return RSPEnum.valueOf(RSPMAP[maxIndex]);
