@@ -10,7 +10,8 @@ import common.TagTeamAction;
 public class AgentWithQ_learning extends Agent {
     private double alpha = 0.3;
     private double epsilon = 0.5;
-    private double gamma = 0.5;
+    private double epsilon_init;
+    private double gamma = 0.3;
     private KHUtil khUtil = new KHUtil();
     // 状態履歴
     public Queue<StateElement> state = new ArrayBlockingQueue<StateElement>(M+1); // 2before, 1before, now
@@ -66,7 +67,10 @@ public class AgentWithQ_learning extends Agent {
         }
     }
 
-    public AgentWithQ_learning(){
+    public AgentWithQ_learning(double eps){
+        // epsilon初期化
+        this.epsilon = eps;
+        this.epsilon_init = eps;
         for(int i=0;i<3;i++){
             for(int j=0;j<3;j++){
                 for(int k=0;k<3;k++){
@@ -217,5 +221,10 @@ public class AgentWithQ_learning extends Agent {
                 System.out.println();
             }
         }
+    }
+
+    @Override
+    public String param(){
+        return String.valueOf(this.epsilon_init);
     }
 }

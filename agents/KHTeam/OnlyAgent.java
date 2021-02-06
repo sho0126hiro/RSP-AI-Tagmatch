@@ -26,4 +26,9 @@ public class OnlyAgent extends Agent {
         
     }
 
+    @Override
+    public String action(){
+        return this.action.name();
+    }
+
 }

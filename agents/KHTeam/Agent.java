@@ -59,9 +59,30 @@ public abstract class Agent {
      */
     public abstract void after(AgentResult r);
 
+    /**
+     * OnlyAgent専用
+     * @return
+     */
+    public String action(){
+        return "";
+    }
+    
+    /**
+     * Q-learning Agent, ProfitSharing Agent限定
+     */
+     public String param(){
+        return "";
+     }
+
     @Override
     public String toString(){
         String className = this.getClass().getName();
+        if(className == "agents.KHTeam.OnlyAgent"){
+            className = className + "(" +  this.action() +")";
+        }
+        if(className == "agents.KHTeam.AgentWithProfitSharing" || className == "agents.KHTeam.AgentWithQ_learning"){
+            className = className + "(" + this.param() + ")";
+        }
         return className + ": [NumOfWins] " + String.valueOf(getNumOfWins()); 
     }
 

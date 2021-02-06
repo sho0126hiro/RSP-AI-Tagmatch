@@ -18,11 +18,11 @@ public class AgentWithProfitSharing extends Agent {
     private KHUtil khUtil = new KHUtil();
     private final int X = 1;
     // 状態履歴
-    public Queue<State> stateHistory = new ArrayBlockingQueue<State>(X + 1); // 2before, 1before, now
+    private Queue<State> stateHistory = new ArrayBlockingQueue<State>(X + 1); // 2before, 1before, now
 
     // 1回前までにだした，敵エージェント２人が出した手と自分のエージェントが出した手
     // [enemyA（-1）][enemyB（-1）][自分の出した手（-1）]
-    public double weight[][][] = new double[3][3][3];
+    private double weight[][][] = new double[3][3][3];
 
     private class Indices {
         public int l; // 1before enemyA
@@ -43,10 +43,10 @@ public class AgentWithProfitSharing extends Agent {
     }
 
     // episode
-    public static final int EPISODE = 3;
+    public int EPISODE;
 
     // Episode文の重み更新
-    public Queue<Indices> indicesQueue = new ArrayBlockingQueue<Indices>(EPISODE);
+    public Queue<Indices> indicesQueue;
 
     private class State {
         public RSPEnum myAction;
@@ -66,7 +66,16 @@ public class AgentWithProfitSharing extends Agent {
         }
     }
 
-    public AgentWithProfitSharing() {
+    /**
+     * ep: エピソード
+     */
+    public AgentWithProfitSharing(int ep) {
+
+        // EPISODE 初期化
+        this.EPISODE = ep;
+        this.indicesQueue = new ArrayBlockingQueue<Indices>(EPISODE);
+
+        // weight 初期化
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 for (int k = 0; k < 3; k++) {
@@ -267,5 +276,10 @@ public class AgentWithProfitSharing extends Agent {
                 System.out.println();
             }
         }
+    }
+
+    @Override
+    public String param(){
+        return String.valueOf(this.EPISODE);
     }
 }

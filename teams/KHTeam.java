@@ -16,9 +16,12 @@ public class KHTeam implements Team {
     private Agent rockAgent;
     private Agent scisorsAgent;
     private Agent paperAgent;
-    private Agent agentWithProfitSharing;
-    private Agent agentWithProfitSharing2;
-    private Agent agentWithQ_learning;
+    private Agent agentWithProfitSharing3;
+    private Agent agentWithProfitSharing10;
+    private Agent agentWithProfitSharing15;
+    private Agent agentWithQ_learning03;
+    private Agent agentWithQ_learning05;
+    private Agent agentWithQ_learning1;
     private Agent agentA;
     private Agent agentB;
 
@@ -31,23 +34,29 @@ public class KHTeam implements Team {
         this.rockAgent = new OnlyAgent(RSPEnum.ROCK);
         this.scisorsAgent = new OnlyAgent(RSPEnum.SCISORS);
         this.paperAgent = new OnlyAgent(RSPEnum.PAPER);
-        this.agentWithProfitSharing = new AgentWithProfitSharing();
-        this.agentWithQ_learning = new AgentWithQ_learning();
-        // this.agentWithProfitSharing2 = new AgentWithProfitSharing2();
+        this.agentWithProfitSharing3 = new AgentWithProfitSharing(3);
+        this.agentWithProfitSharing10 = new AgentWithProfitSharing(10);
+        this.agentWithProfitSharing15 = new AgentWithProfitSharing(15);
+        this.agentWithQ_learning03 = new AgentWithQ_learning(0.3);
+        this.agentWithQ_learning05 = new AgentWithQ_learning(0.5);
+        this.agentWithQ_learning1 = new AgentWithQ_learning(1.0);
 
         this.agents = new ArrayList<Agent>();
         agents.add(this.rockAgent);
         agents.add(this.scisorsAgent);
         agents.add(this.paperAgent);
-        agents.add(this.agentWithProfitSharing);
-        // agents.add(this.agentWithProfitSharing2);
-        agents.add(this.agentWithQ_learning);
+        agents.add(this.agentWithProfitSharing3);
+        agents.add(this.agentWithProfitSharing10);
+        agents.add(this.agentWithProfitSharing15);
+        agents.add(this.agentWithQ_learning03);
+        agents.add(this.agentWithQ_learning05);
+        agents.add(this.agentWithQ_learning1);
 
         this.agentAndNextAction = new ArrayList<Pair<Agent, RSPEnum>>();
     }
 
     public void before(){
-        System.out.println("before--------------------------------------------------");
+        // System.out.println("before--------------------------------------------------");
         for(Agent a: this.agents){
             a.before();
         }
@@ -64,13 +73,13 @@ public class KHTeam implements Team {
         });
         System.out.printf("[setNextAgent]");
         System.out.println(agents);
-        this.agentA = this.agentWithQ_learning;
-        //this.agentA = agents.get(0);
+        // this.agentA = this.agentWithQ_learning;
+        this.agentA = agents.get(0);
         this.agentB = agents.get(1);
     }
 
     public TagTeamAction getAction(){
-        System.out.println("getAction--------------------------------------------------");
+        // System.out.println("getAction--------------------------------------------------");
         // 行動の集合を与える
         RSPEnum actionA = RSPEnum.ROCK;
         RSPEnum actionB = RSPEnum.ROCK;
@@ -78,12 +87,12 @@ public class KHTeam implements Team {
             if(agent.equals(this.agentA)){
                 RSPEnum tmp = agent.getNextAction();
                 actionA = tmp;
-                System.out.printf("[getAction Agent A] %s\n", tmp.name());
+                // System.out.printf("[getAction Agent A] %s\n", tmp.name());
                 this.agentAndNextAction.add(new Pair<Agent, RSPEnum>(agent, tmp));
             } else if(agent.equals(this.agentB)) {
                 RSPEnum tmp = agent.getNextAction();
                 actionB = tmp;
-                System.out.printf("[getAction Agent B] %s\n", tmp.name());
+                // System.out.printf("[getAction Agent B] %s\n", tmp.name());
                 this.agentAndNextAction.add(new Pair<Agent, RSPEnum>(agent, tmp));
             } else {
                 this.agentAndNextAction.add(new Pair<Agent, RSPEnum> (agent, agent.getNextAction()));
@@ -93,14 +102,14 @@ public class KHTeam implements Team {
     }
 
     public void after(Result r){
-        System.out.println("after--------------------------------------------------");
+        // System.out.println("after--------------------------------------------------");
         for(Pair<Agent, RSPEnum> p: this.agentAndNextAction){
             // resultが各エージェントで違うので注意
             AgentResult ar = new AgentResult(r, p.getTwo());
             p.getOne().after(ar);
             p.getOne().addIsWinHistory(ar.isWin);
         }
-        System.out.printf("[after] ");
-        System.out.println(new AgentResult(r, r.AllyTeamAction.actionA));
+        // System.out.printf("[after] ");
+        // System.out.println(new AgentResult(r, r.AllyTeamAction.actionA));
     }
 }
