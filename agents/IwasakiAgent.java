@@ -84,13 +84,6 @@ public class IwasakiAgent {
                 + ALPHA * (reward + GAMMA * q[myTeam][oppTeam][maxIndex]);
         }
 
-        System.out.println(reward);
-        System.out.println(myTeamOld);
-        System.out.println(oppTeamOld);
-        System.out.println(Arrays.toString(q[0][0]));
-        System.out.println(Arrays.toString(q[1][0]));
-        System.out.println(Arrays.toString(q[2][0]));
-
         this.teamA1 = teamA1;
         this.teamA2 = teamA2;
         this.teamB1 = teamB1;
