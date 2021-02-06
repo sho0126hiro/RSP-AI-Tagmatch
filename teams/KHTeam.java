@@ -6,12 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import agents.KHTeam.Agent;
-import agents.KHTeam.AgentResult;
-import agents.KHTeam.OnlyAgent;
-import agents.KHTeam.Pair;
-import agents.KHTeam.AgentWithProfitSharing;
-import agents.KHTeam.AgentWithProfitSharing2;
+import agents.KHTeam.*;
 import common.RSPEnum;
 import common.Result;
 import common.TagTeamAction;
@@ -23,7 +18,7 @@ public class KHTeam implements Team {
     private Agent paperAgent;
     private Agent agentWithProfitSharing;
     private Agent agentWithProfitSharing2;
-    
+    private Agent agentWithQ_learning;
     private Agent agentA;
     private Agent agentB;
 
@@ -37,6 +32,7 @@ public class KHTeam implements Team {
         this.scisorsAgent = new OnlyAgent(RSPEnum.SCISORS);
         this.paperAgent = new OnlyAgent(RSPEnum.PAPER);
         this.agentWithProfitSharing = new AgentWithProfitSharing();
+        this.agentWithQ_learning = new AgentWithQ_learning();
         // this.agentWithProfitSharing2 = new AgentWithProfitSharing2();
 
         this.agents = new ArrayList<Agent>();
@@ -45,6 +41,7 @@ public class KHTeam implements Team {
         agents.add(this.paperAgent);
         agents.add(this.agentWithProfitSharing);
         // agents.add(this.agentWithProfitSharing2);
+        agents.add(this.agentWithQ_learning);
 
         this.agentAndNextAction = new ArrayList<Pair<Agent, RSPEnum>>();
     }
@@ -67,7 +64,8 @@ public class KHTeam implements Team {
         });
         System.out.printf("[setNextAgent]");
         System.out.println(agents);
-        this.agentA = agents.get(0);
+        this.agentA = this.agentWithQ_learning;
+        //this.agentA = agents.get(0);
         this.agentB = agents.get(1);
     }
 
