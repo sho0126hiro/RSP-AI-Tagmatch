@@ -11,9 +11,13 @@ public class BattleManager {
     public Team teamA;
     public Team teamB;
     private boolean ignoresAiko;
+    private boolean ignoresLogs;
+    private boolean viewResult;
 
-    public BattleManager(boolean ignoresAiko) {
+    public BattleManager(boolean ignoresAiko, boolean ignoresLogs, boolean viewResult) {
       this.ignoresAiko = ignoresAiko; 
+      this.ignoresLogs = ignoresLogs; 
+      this.viewResult = viewResult; 
     }
 
     public enum TeamName {
@@ -76,6 +80,10 @@ public class BattleManager {
     private void init() {
         this.teamA.init();
         this.teamB.init();
+        this.teamA_agentA_Score=0;
+        this.teamA_agentB_Score=0;
+        this.teamB_agentA_Score=0;
+        this.teamB_agentB_Score=0;
     }
 
     public boolean isInteger(double d) {
@@ -166,6 +174,11 @@ public class BattleManager {
         return new Desicion(teamA, teamB, scores[0], scores[1], scores[2], scores[3]);
     }
 
+    private long teamA_agentA_Score=0;
+    private long teamA_agentB_Score=0;
+    private long teamB_agentA_Score=0;
+    private long teamB_agentB_Score=0;
+
     /**
      * 対戦を行う
      */
@@ -178,6 +191,11 @@ public class BattleManager {
         this.teamA.after(d.toResult(TeamName.TeamA));
         this.teamB.after(d.toResult(TeamName.TeamB));
 
+        this.teamA_agentA_Score+=d.teamA_agentA_Score;
+        this.teamA_agentB_Score+=d.teamA_agentB_Score;
+        this.teamB_agentA_Score+=d.teamB_agentA_Score;
+        this.teamB_agentB_Score+=d.teamB_agentB_Score;
+
         // あいことなる条件をやや無理やり実装
         var isAiko = d.teamA_agentA_Score == 0 && d.teamA_agentB_Score == 0 &&
           d.teamB_agentA_Score == 0 && d.teamB_agentB_Score == 0;
@@ -185,7 +203,7 @@ public class BattleManager {
         /*System.out.println(a);
         System.out.println(b);
         System.out.println(d);*/
-        if(!isAiko || !ignoresAiko){
+        if(!ignoresLogs && (!isAiko || !ignoresAiko)){
           System.out.println(String.format("%d, %d, %d, %d, %d", k, d.teamA_agentA_Score, d.teamA_agentB_Score, d.teamB_agentA_Score, d.teamB_agentB_Score));
         }
 
@@ -213,7 +231,9 @@ public class BattleManager {
                 var teamAName=teams[i].getClass().getSimpleName();
                 var teamBName=teams[j].getClass().getSimpleName();
                 var aikos = 0l;
-                System.out.println("\n回数, "+teamAName+"のAの獲得スコア, "+teamAName+"のBの獲得スコア, "+teamBName+"のAの獲得スコア, "+teamBName+"のBの獲得スコア");
+                if(!ignoresLogs){
+                  System.out.println("\n回数, "+teamAName+"のAの獲得スコア, "+teamAName+"のBの獲得スコア, "+teamBName+"のAの獲得スコア, "+teamBName+"のBの獲得スコア");
+                }
                 for(int k = 0; k<50000;){
                   if(this.buttle(k)){
                     aikos=0;
@@ -225,6 +245,14 @@ public class BattleManager {
                       break;
                     }
                   }
+                }
+
+                if(viewResult){
+                  System.out.println(
+                    teamAName+"のAの獲得スコア: "+this.teamA_agentA_Score+", "+
+                    teamAName+"のBの獲得スコア: "+this.teamA_agentB_Score+", "+
+                    teamBName+"のAの獲得スコア: "+this.teamB_agentA_Score+", "+
+                    teamBName+"のBの獲得スコア: "+this.teamB_agentB_Score);
                 }
             }
         }
