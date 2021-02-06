@@ -246,14 +246,14 @@ public class AgentWithProfitSharing extends Agent {
 
     public void displayIndicesQueue() {
         System.out.printf("[displayIndicesQueue] ");
-        for (var i : this.indicesQueue) {
+        for (Indices i : this.indicesQueue) {
             System.out.println(i);
         }
     }
 
     public void displayStateHistory() {
         System.out.printf("[displayStateHistory] ");
-        for (var i : this.stateHistory) {
+        for (State i : this.stateHistory) {
             System.out.println(i);
         }
     }
