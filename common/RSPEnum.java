@@ -1,7 +1,5 @@
 package common;
 
-import java.util.Arrays;
-
 /**
  * じゃんけんを定義する関数
  */
