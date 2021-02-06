@@ -226,14 +226,14 @@ public class BattleManager {
                 if(!ignoresLogs){
                   System.out.println("\n回数, "+teamAName+"のAの獲得スコア, "+teamAName+"のBの獲得スコア, "+teamBName+"のAの獲得スコア, "+teamBName+"のBの獲得スコア");
                 }
-                for(int k = 0; k<50000;){
+                for(int k = 0; k<10000;){
                   if(this.buttle(k)){
                     aikos=0;
                     k++;
                   }else{
-                    // あいこが50000回続いたら切る
+                    // あいこが10000回続いたら切る
                     aikos++;
-                    if(aikos>50000){
+                    if(aikos>10000){
                       break;
                     }
                   }
