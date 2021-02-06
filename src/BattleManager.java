@@ -212,10 +212,18 @@ public class BattleManager {
                 this.init();
                 var teamAName=teams[i].getClass().getSimpleName();
                 var teamBName=teams[j].getClass().getSimpleName();
+                var aikos = 0l;
                 System.out.println("\n回数, "+teamAName+"のAの獲得スコア, "+teamAName+"のBの獲得スコア, "+teamBName+"のAの獲得スコア, "+teamBName+"のBの獲得スコア");
                 for(int k = 0; k<50000;){
                   if(this.buttle(k)){
+                    aikos=0;
                     k++;
+                  }else{
+                    // あいこが50000回続いたら切る
+                    aikos++;
+                    if(aikos>50000){
+                      break;
+                    }
                   }
                 }
             }

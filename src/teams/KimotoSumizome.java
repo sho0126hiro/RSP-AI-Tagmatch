@@ -104,7 +104,7 @@ public class KimotoSumizome implements Team {
   }
 
   public KimotoSumizome() {
-    this(1000);
+    this(100);
   }
 
   public double[] getFlattenJankenLog() {
