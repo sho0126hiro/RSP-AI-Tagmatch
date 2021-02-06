@@ -130,47 +130,39 @@ public class BattleManager {
             count[actions[j].getIndex()]++;
         }
         // すべての手が出ていたらあいこ
-        Boolean flag = true;
+        boolean isThreeAiko = true;
         for (int j = 0; j < count.length; j++) {
-            if (count[j] == 0) flag = false;
+            if (count[j] == 0) isThreeAiko = false;
         }
-        if(flag) return new Desicion(teamA, teamB, 0,0,0,0);
-        int[] max = { 0, 0 }; // {num, index}
+        if(isThreeAiko) return new Desicion(teamA, teamB, 0,0,0,0);
+
+        // 4人すべて同じ手だったらあいこ
         for (int j = 0; j < count.length; j++) {
-            if (max[0] < count[j]) {
-                max[0] = count[j];
-                max[1] = j;
+            if (count[j] == 4) {
+              return new Desicion(teamA, teamB, 0,0,0,0);
             }
         }
-        int tmpIndex = 0;
-        int winIndex = 0;
-        int[] scores = { 0, 0, 0, 0 }; // agentごとの獲得スコア
-        switch (max[0]) {
-            case 4: // 全エージェントが同じ手を出しているとき
-                return new Desicion(teamA, teamB, 0, 0, 0, 0);
-            case 2:
-                for (int j = 0; j < count.length; j++) {
-                    if (j == max[1])
-                        continue;
-                    if (count[j] == 2)
-                        tmpIndex = j;
-                }
-            case 3:
-                for (int j = 0; j < count.length; j++) {
-                    if (j == max[1])
-                        continue;
-                    if (count[j] == 1)
-                        tmpIndex = j;
-                }
+
+        // この時点で手は2つだけ
+        RSPEnum[] twoRSPs = new RSPEnum[2];
+        int twoRSPs_i=0;
+        for (int j = 0; j < count.length; j++) {
+          if(count[j]>0){
+            twoRSPs[twoRSPs_i]=rsp[j];
+            twoRSPs_i++;
+          }
         }
-        if (isWin2v2(rsp[max[1]], rsp[tmpIndex]))
-            winIndex = max[1];
-        else
-            winIndex = tmpIndex;
-        for (int i = 0; i < actions.length; i++) {
-            if (actions[i] == rsp[winIndex])
-                scores[i]++;
+
+        RSPEnum winner = isWin2v2(twoRSPs[0],twoRSPs[1])?twoRSPs[1]:twoRSPs[0];
+
+        int[] scores = {0, 0, 0, 0};
+
+        for (int j = 0; j < 4; j++){
+          if(actions[j] == winner){
+            scores[j]++;
+          }
         }
+
         return new Desicion(teamA, teamB, scores[0], scores[1], scores[2], scores[3]);
     }
 
