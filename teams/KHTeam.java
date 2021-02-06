@@ -76,6 +76,10 @@ public class KHTeam implements Team {
         // this.agentA = this.agentWithQ_learning;
         this.agentA = agents.get(0);
         this.agentB = agents.get(1);
+        if(this.agentA instanceof OnlyAgent && this.agentB instanceof OnlyAgent){
+            if(this.agents.get(2) instanceof OnlyAgent) this.agentB = agents.get(3);
+            else this.agentB = agents.get(2);
+        }
     }
 
     public TagTeamAction getAction(){
