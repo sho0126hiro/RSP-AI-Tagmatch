@@ -12,11 +12,11 @@ public class AgentWithQ_learning extends Agent {
     private double epsilon = 0.5;
     private double gamma = 0.5;
     private KHUtil khUtil = new KHUtil();
-    // ó‘Ô—š—ğ
+    // çŠ¶æ…‹å±¥æ­´
     public Queue<StateElement> state = new ArrayBlockingQueue<StateElement>(M+1); // 2before, 1before, now
 
-    // M‰ñ‘O‚Ü‚Å‚É‚¾‚µ‚½C“GƒG[ƒWƒFƒ“ƒg‚Ql‚ªo‚µ‚½è‚Æ©•ª‚ÌƒG[ƒWƒFƒ“ƒg‚ªo‚µ‚½è
-    // [©•ª‚Ìo‚µ‚½èi-2j][enemyAi-2j][enemyBi-2j][©•ª‚Ìo‚µ‚½èi-1j][enemyAi-1j][enemyBi-1j][¡‚Ì©•ª‚Ìè]
+    // Må›å‰ã¾ã§ã«ã ã—ãŸï¼Œæ•µã‚¨ãƒ¼ã‚¸ã‚§ãƒ³ãƒˆï¼’äººãŒå‡ºã—ãŸæ‰‹ã¨è‡ªåˆ†ã®ã‚¨ãƒ¼ã‚¸ã‚§ãƒ³ãƒˆãŒå‡ºã—ãŸæ‰‹
+    // [è‡ªåˆ†ã®å‡ºã—ãŸæ‰‹ï¼ˆ-2ï¼‰][enemyAï¼ˆ-2ï¼‰][enemyBï¼ˆ-2ï¼‰][è‡ªåˆ†ã®å‡ºã—ãŸæ‰‹ï¼ˆ-1ï¼‰][enemyAï¼ˆ-1ï¼‰][enemyBï¼ˆ-1ï¼‰][ä»Šã®è‡ªåˆ†ã®æ‰‹]
     public double qvalue[][][][][][][] = new double[3][3][3][3][3][3][3];
 
     private class Indices {
@@ -83,7 +83,7 @@ public class AgentWithQ_learning extends Agent {
             }
         }
 
-        // state, indicesQueue 0‰Šú‰»
+        // state, indicesQueue 0åˆæœŸåŒ–
         for(int i=0;i<M+1;i++){
             TagTeamAction tta = new TagTeamAction(RSPEnum.ROCK, RSPEnum.ROCK);
             AgentResult r = new AgentResult(new Result(0,0,0,0, tta, tta), RSPEnum.ROCK);
@@ -97,10 +97,10 @@ public class AgentWithQ_learning extends Agent {
     }
 
     /**
-     * •ñV‚ğ—^‚¦‚é
-     * @param now ó‘Ô
+     * å ±é…¬ã‚’ä¸ãˆã‚‹
+     * @param now çŠ¶æ…‹
      * @return {0.0, -1.0, -2.0, -3.0}:
-     * (ˆêlŸ‚¿A‚Ç‚Á‚¿‚©‚ÉŸ‚Â),‚ ‚¢‚±, ‚Ç‚Á‚¿‚©‚É•‰‚¯‚éA“ñl‚É•‰‚¯‚é
+     * (ä¸€äººå‹ã¡ã€ã©ã£ã¡ã‹ã«å‹ã¤),ã‚ã„ã“, ã©ã£ã¡ã‹ã«è² ã‘ã‚‹ã€äºŒäººã«è² ã‘ã‚‹
      */
     public double getReward(StateElement now){
         double r = khUtil.RSP1v3(now.myAction, now.enemyActionA, now.enemyActionB);
@@ -115,7 +115,7 @@ public class AgentWithQ_learning extends Agent {
         return new Indices(before2,before1,now);
     }
 
-    //t+1‚Ì‚Æ‚«‚Ìq’l@s“®‚Í0‚Æ‚Æ‚è‚ ‚¦‚¸’u‚¢‚Ä‚¢‚é(Max‚ğ‚Æ‚éê‡‚ÆƒCƒvƒVƒƒ“‚ÅŠm—¦“I‚É‚Æ‚éê‡‚ª‚ ‚é‚½‚ß)
+    //t+1ã®ã¨ãã®qå€¤ã€€è¡Œå‹•ã¯0ã¨ã¨ã‚Šã‚ãˆãšç½®ã„ã¦ã„ã‚‹(Maxã‚’ã¨ã‚‹å ´åˆã¨ã‚¤ãƒ—ã‚·ãƒ­ãƒ³ã§ç¢ºç‡çš„ã«ã¨ã‚‹å ´åˆãŒã‚ã‚‹ãŸã‚)
     public Indices futureIndices(List<StateElement> states){
         StateElement before2 = states.get(1);
         StateElement before1 = states.get(2);
@@ -131,9 +131,9 @@ public class AgentWithQ_learning extends Agent {
         double maxQvalue = -Double.MAX_VALUE,tmpValue;
         int maxIndex = 0;
         Indices nowId = nowIndices(new ArrayList<StateElement>(this.state));
-        double nowQvalue = this.qvalue[nowId.i][nowId.j][nowId.k][nowId.l][nowId.m][nowId.n][nowId.o];//Œ»İ‚Ìq’l
-        Indices futureMaxId = futureIndices(new ArrayList<StateElement>(this.state));//s+1‚Ìq’l
-        //Ÿ‚És“®‚µ‚½‚Æ‚«‚ÌÅ‘å‚Ìq’l‚ğ’T‚·
+        double nowQvalue = this.qvalue[nowId.i][nowId.j][nowId.k][nowId.l][nowId.m][nowId.n][nowId.o];//ç¾åœ¨ã®qå€¤
+        Indices futureMaxId = futureIndices(new ArrayList<StateElement>(this.state));//s+1ã®qå€¤
+        //æ¬¡ã«è¡Œå‹•ã—ãŸã¨ãã®æœ€å¤§ã®qå€¤ã‚’æ¢ã™
         for(int tmpNum = 0; tmpNum < RSPEnum.values().length; tmpNum++){
             tmpValue = this.qvalue[futureMaxId.i][futureMaxId.j][futureMaxId.k][futureMaxId.l][futureMaxId.m][futureMaxId.n][tmpNum];
             if(tmpValue > maxQvalue){
@@ -154,7 +154,7 @@ public class AgentWithQ_learning extends Agent {
         double maxQvalue = -Double.MAX_VALUE,tmpValue;
         int maxIndex = 0;
         int idx = 0;
-        //Šm—¦epsilon‚Åƒ‰ƒ“ƒ_ƒ€‚És“®
+        //ç¢ºç‡epsilonã§ãƒ©ãƒ³ãƒ€ãƒ ã«è¡Œå‹•
         if(Math.random() < epsilon){
             double rand = 3.0 * Math.random();
             if(rand < 1.0){
@@ -176,19 +176,19 @@ public class AgentWithQ_learning extends Agent {
             }
             idx = maxIndex;
         }
-        if(epsilon > 0){//epsilon‚Í1–œ‰ñ‚ÌXV‚Å0‚Éû‘©‚·‚é‚æ‚¤‚É‚µ‚Ä‚¢‚é
+        if(epsilon > 0){//epsilonã¯1ä¸‡å›ã®æ›´æ–°ã§0ã«åæŸã™ã‚‹ã‚ˆã†ã«ã—ã¦ã„ã‚‹
             epsilon = epsilon - 0.00005;
         }
 
-        return khUtil.choiceRSPEnumByIndex(idx); // Œˆ’è“I•ûô
-        // return khUtil.choiceRSPEnumByProb(this.weightToProb(w)); // Šm—¦“I•ûô
+        return khUtil.choiceRSPEnumByIndex(idx); // æ±ºå®šçš„æ–¹ç­–
+        // return khUtil.choiceRSPEnumByProb(this.weightToProb(w)); // ç¢ºç‡çš„æ–¹ç­–
     }
 
     @Override
     public void after(AgentResult r) {
         addState(r);
         List<StateElement> states = new ArrayList<StateElement>(this.state);
-        StateElement now = states.get(states.size()-1); // ÅVQueue
+        StateElement now = states.get(states.size()-1); // æœ€æ–°Queue
         double reward = getReward(now);
         updateQvalue(reward);
     }
