@@ -219,7 +219,7 @@ public class BattleManager {
    */
   public void run() {
     // ここにチームインスタンスを置く
-    Team[] teams = { new KimotoSumizome(), new IITeam(), new KHTeam(), new THTeam() };
+    Team[] teams = { new KimotoSumizome(), new SampleTeam() };
     // 総当りになるようにする必要あり
     // 50000回ループ * 5回戦，結果出力などの処理が必要
     for (int i = 0; i < teams.length; i++) {
