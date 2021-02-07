@@ -181,7 +181,7 @@ public class AgentWithQ_learning extends Agent {
             idx = maxIndex;
         }
         if(epsilon > 0){//epsilonは1万回の更新で0に収束するようにしている
-            epsilon = epsilon - 0.00005;
+            epsilon = epsilon - epsilon_init/100000;
         }
 
         return khUtil.choiceRSPEnumByIndex(idx); // 決定的方策

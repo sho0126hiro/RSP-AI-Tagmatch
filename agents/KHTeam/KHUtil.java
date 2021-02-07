@@ -53,7 +53,7 @@ public class KHUtil {
         if(a.getIndex() == b.getIndex() && a.getIndex() == c.getIndex()) return -1.0; // あいこ
         int AvsB = this.RSP1v1(a, b);
         int AvsC = this.RSP1v1(a, c);
-        System.out.printf("[RSP1vs3] AvsB: %d, AvsC: %d\n", AvsB, AvsC);
+        // System.out.printf("[RSP1vs3] AvsB: %d, AvsC: %d\n", AvsB, AvsC);
         if(AvsB == 1 && AvsC == 1) return 0.0; //一人勝ち 
         if(AvsB == -1 && AvsC == -1) return -3.0;  // １人負け
         if(AvsB == 1 || AvsC == 1) return -0.5; //　どっちかに勝った（一度でも勝利していたらOK）
