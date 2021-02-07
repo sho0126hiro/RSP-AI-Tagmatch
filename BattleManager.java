@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Arrays;
 
 import common.RSPEnum;
@@ -201,7 +205,7 @@ public class BattleManager {
      * System.out.println(a); System.out.println(b); System.out.println(d);
      */
     if (!ignoresLogs && (!isAiko || !ignoresAiko)) {
-      System.out.println(String.format("%d, %d, %d, %d, %d", k, d.teamA_agentA_Score, d.teamA_agentB_Score,
+      this.writer.println(String.format("%d, %d, %d, %d, %d", k, d.teamA_agentA_Score, d.teamA_agentB_Score,
           d.teamB_agentA_Score, d.teamB_agentB_Score));
     }
 
@@ -214,45 +218,60 @@ public class BattleManager {
     };
   }
 
+  PrintWriter writer = null;
+
   /**
    * チーム設定および対戦の実行
    */
   public void run() {
-    // ここにチームインスタンスを置く
-    Team[] teams = { new KimotoSumizome(), new THTeam(), new IITeam(), new KHTeam() };
-    // 総当りになるようにする必要あり
-    // 50000回ループ * 5回戦，結果出力などの処理が必要
-    for (int i = 0; i < teams.length; i++) {
-      for (int j = i + 1; j < teams.length; j++) {
-        this.config(teams[i], teams[j]);
-        this.init();
-        var teamAName = teams[i].getClass().getSimpleName();
-        var teamBName = teams[j].getClass().getSimpleName();
-        var aikos = 0l;
-        if (!ignoresLogs) {
-          System.out.println("\n回数, " + teamAName + "のAの獲得スコア, " + teamAName + "のBの獲得スコア, " + teamBName + "のAの獲得スコア, "
-              + teamBName + "のBの獲得スコア");
-        }
-        for (int k = 0; k < 10000;) {
-          if (this.buttle(k)) {
-            aikos = 0;
-            k++;
-          } else {
-            // あいこが10000回続いたら切る
-            aikos++;
-            if (aikos > 10000) {
-              break;
+    File file = new File("./a.log");
+
+    try {
+      this.writer = new PrintWriter(new FileWriter(file, false));
+
+      // ここにチームインスタンスを置く
+      Team[] teams = { new KimotoSumizome(), new THTeam(), new IITeam(), new KHTeam() };
+      // 総当りになるようにする必要あり
+      // 50000回ループ * 5回戦，結果出力などの処理が必要
+      for (int i = 0; i < teams.length; i++) {
+        for (int j = i + 1; j < teams.length; j++) {
+          this.config(teams[i], teams[j]);
+          this.init();
+          var teamAName = teams[i].getClass().getSimpleName();
+          var teamBName = teams[j].getClass().getSimpleName();
+          var aikos = 0l;
+          if (!ignoresLogs) {
+            writer.println("\n回数, " + teamAName + "のAの獲得スコア, " + teamAName + "のBの獲得スコア, " + teamBName + "のAの獲得スコア, "
+                + teamBName + "のBの獲得スコア");
+          }
+          for (int k = 0; k < 10000;) {
+            if (this.buttle(k)) {
+              aikos = 0;
+              k++;
+            } else {
+              // あいこが10000回続いたら切る
+              aikos++;
+              if (aikos > 10000) {
+                break;
+              }
             }
           }
-        }
 
-        if (viewResult) {
-          System.out.println(teamAName + "のAの獲得スコア: " + this.teamA_agentA_Score + ", " + teamAName + "のBの獲得スコア: "
-              + this.teamA_agentB_Score + ", " + teamBName + "のAの獲得スコア: " + this.teamB_agentA_Score + ", " + teamBName
-              + "のBの獲得スコア: " + this.teamB_agentB_Score);
+          if (viewResult) {
+            writer.println(teamAName + "のAの獲得スコア: " + this.teamA_agentA_Score + ", " + teamAName + "のBの獲得スコア: "
+                + this.teamA_agentB_Score + ", " + teamBName + "のAの獲得スコア: " + this.teamB_agentA_Score + ", " + teamBName
+                + "のBの獲得スコア: " + this.teamB_agentB_Score);
+          }
         }
       }
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      if (this.writer != null) {
+        this.writer.close();
+      }
     }
+
     // CSVで出力します
     // バトルが切り替わったタイミングでは"\n\n"が入るので簡単に分割できるはず
   }
