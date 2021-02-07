@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 
 import common.RSPEnum;
 import common.Result;
@@ -232,7 +231,7 @@ public class BattleManager {
       // ここにチームインスタンスを置く
       Team[] teams = { new KimotoSumizome(), new THTeam(), new IITeam(), new KHTeam() };
       // 総当りになるようにする必要あり
-      // 50000回ループ * 5回戦，結果出力などの処理が必要
+      // 10000回ループ * 5回戦，結果出力などの処理が必要
       for (int i = 0; i < teams.length; i++) {
         for (int j = i + 1; j < teams.length; j++) {
           this.config(teams[i], teams[j]);
@@ -244,14 +243,14 @@ public class BattleManager {
             writer.println("\n回数, " + teamAName + "のAの獲得スコア, " + teamAName + "のBの獲得スコア, " + teamBName + "のAの獲得スコア, "
                 + teamBName + "のBの獲得スコア");
           }
-          for (int k = 0; k < 10000;) {
+          for (int k = 0; k < 50000;) {
             if (this.buttle(k)) {
               aikos = 0;
               k++;
             } else {
               // あいこが10000回続いたら切る
               aikos++;
-              if (aikos > 10000) {
+              if (aikos > 50000) {
                 break;
               }
             }
