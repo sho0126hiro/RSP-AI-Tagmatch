@@ -1,5 +1,4 @@
 #!/bin/sh
-cd src/
 rm teams/*.class
 rm agents/*.class
 rm common/*.class
