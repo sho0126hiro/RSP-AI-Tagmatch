@@ -1,7 +1,7 @@
 package teams;
 
-import agents.IwasakiAgent;
-import agents.IkeAgent;
+import agents.IITeam.IwasakiAgent;
+import agents.IITeam.IkeAgent;
 import common.Team;
 import common.RSPEnum;
 import common.Result;
