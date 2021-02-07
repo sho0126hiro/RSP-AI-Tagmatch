@@ -1,6 +1,6 @@
 *.class
 .vscode
-/out
 *.iml
 out.txt
 *.csv
+out/

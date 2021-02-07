@@ -19,9 +19,9 @@ public class KHTeam implements Team {
     private Agent agentWithProfitSharing3;
     private Agent agentWithProfitSharing10;
     private Agent agentWithProfitSharing15;
-    private Agent agentWithQ_learning03;
+    private Agent agentWithQ_learning08;
     private Agent agentWithQ_learning05;
-    private Agent agentWithQ_learning1;
+    private Agent agentWithQ_learning00;
     private Agent agentA;
     private Agent agentB;
 
@@ -37,9 +37,9 @@ public class KHTeam implements Team {
         this.agentWithProfitSharing3 = new AgentWithProfitSharing(3);
         this.agentWithProfitSharing10 = new AgentWithProfitSharing(10);
         this.agentWithProfitSharing15 = new AgentWithProfitSharing(15);
-        this.agentWithQ_learning03 = new AgentWithQ_learning(0.3);
+        this.agentWithQ_learning08 = new AgentWithQ_learning(0.8);
         this.agentWithQ_learning05 = new AgentWithQ_learning(0.5);
-        this.agentWithQ_learning1 = new AgentWithQ_learning(1.0);
+        this.agentWithQ_learning00 = new AgentWithQ_learning(0.0);
 
         this.agents = new ArrayList<Agent>();
         agents.add(this.rockAgent);
@@ -48,9 +48,9 @@ public class KHTeam implements Team {
         agents.add(this.agentWithProfitSharing3);
         agents.add(this.agentWithProfitSharing10);
         agents.add(this.agentWithProfitSharing15);
-        agents.add(this.agentWithQ_learning03);
+        agents.add(this.agentWithQ_learning08);
         agents.add(this.agentWithQ_learning05);
-        agents.add(this.agentWithQ_learning1);
+        agents.add(this.agentWithQ_learning00);
 
         this.agentAndNextAction = new ArrayList<Pair<Agent, RSPEnum>>();
     }
@@ -71,8 +71,8 @@ public class KHTeam implements Team {
                 return b.getNumOfWins() - a.getNumOfWins();
             }
         });
-        System.out.printf("[setNextAgent]");
-        System.out.println(agents);
+        // System.out.printf("[setNextAgent]");
+        // System.out.println(agents);
         // this.agentA = this.agentWithQ_learning;
         this.agentA = agents.get(0);
         this.agentB = agents.get(1);
