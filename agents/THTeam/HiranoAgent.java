@@ -162,6 +162,6 @@ public class HiranoAgent {
     public static void main(String[] args) {
         HiranoAgent a = new HiranoAgent();
         RSPEnum hoge=a.getAction();
-        System.out.println(hoge);
+        // System.out.println(hoge);
     }
 }

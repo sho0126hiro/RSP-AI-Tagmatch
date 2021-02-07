@@ -25,7 +25,7 @@ public class THTeam implements Team {
     	agentA.before();
     };
     public void after(Result r){
-        System.out.println(r);
+        // System.out.println(r);
     	agentA.after(r);
     	agentB.addResult(r);
     	this.winCount = this.winCount + r.PointOfAllyAgentA + r.PointOfAllyAgentB;

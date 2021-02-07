@@ -88,3 +88,22 @@ RSPEnum.ROCKで，「グー」
 `./teams/SampleTeam.java`
 - [Agentのサンプル - ](./agents/SampleAgent.java)
 `./agents/SampleAgent.java`
+
+## テスト方法
+
+コンパイル（ビルド）
+`javac Runner.java` 
+
+実行
+`java Runner`
+
+実行オプション
+`java Runner [option （複数可）]`
+
+オプション一覧
+- `--ignores-aiko`
+    > （あいこをcsvに出さないオプション）
+- `--ignores-logs`
+    > ログを出力しない
+- `--result`
+    > 対戦結果の出力

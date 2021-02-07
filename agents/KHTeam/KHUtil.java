@@ -80,22 +80,22 @@ public class KHUtil {
      */
     public RSPEnum choiceRSPEnumByProb(double[] problist){
         RSPEnum[] r = RSPEnum.values();
-        System.out.printf("[choiceRSPEnumByProb-problist] ");
+        // System.out.printf("[choiceRSPEnumByProb-problist] ");
         for(int i=0;i<problist.length;i++){
-            System.out.printf("%f ", problist[i]);
+            // System.out.printf("%f ", problist[i]);
         }
-        System.out.println();
+        // System.out.println();
         RandomCollection<RSPEnum> rc = new RandomCollection<RSPEnum>();
         for(int i=0; i < problist.length; i++){
             rc.add(problist[i], r[i]);
         }
         RSPEnum ret = rc.get();
         if(ret == null) {
-            System.out.printf("[choiceRSPEnumByProb-problist == null]");
+            // System.out.printf("[choiceRSPEnumByProb-problist == null]");
             for(int i=0;i<problist.length;i++){
-                System.out.printf("%d ", problist);
+                // System.out.printf("%d ", problist);
             }
-            System.exit(0);
+            // System.exit(0);
         }
         return ret;
     }
