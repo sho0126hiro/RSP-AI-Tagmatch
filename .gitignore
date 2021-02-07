@@ -1,6 +1,8 @@
 *.class
-.vscode
-*.iml
-out.txt
 *.csv
-out/
+*.iml
+*.log
+*.txt
+
+.vscode
+out

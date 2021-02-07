@@ -27,21 +27,39 @@ public class HiranoAgent {
         int reward = 0;
         if (myHand == RSPEnum.ROCK) {
             switch (enemyHand) {
-                case ROCK -> reward = DRAW_REWARD;
-                case SCISORS -> reward = WIN_REWARD;
-                case PAPER -> reward = LOSE_REWARD;
+                case ROCK:
+                    reward = DRAW_REWARD;
+                    break;
+                case SCISORS:
+                    reward = WIN_REWARD;
+                    break;
+                case PAPER:
+                    reward = LOSE_REWARD;
+                    break;
             }
         } else if (myHand == RSPEnum.SCISORS) {
             switch (enemyHand) {
-                case ROCK -> reward = LOSE_REWARD;
-                case SCISORS -> reward = DRAW_REWARD;
-                case PAPER -> reward = WIN_REWARD;
+                case ROCK:
+                    reward = LOSE_REWARD;
+                    break;
+                case SCISORS:
+                    reward = DRAW_REWARD;
+                    break;
+                case PAPER:
+                    reward = WIN_REWARD;
+                    break;
             }
         }else {
             switch (enemyHand) {
-                case ROCK -> reward = WIN_REWARD;
-                case SCISORS -> reward = LOSE_REWARD;
-                case PAPER -> reward = DRAW_REWARD;
+                case ROCK:
+                    reward = WIN_REWARD;
+                    break;
+                    case SCISORS:
+                    reward = LOSE_REWARD;
+                    break;
+                    case PAPER:
+                    reward = DRAW_REWARD;
+                    break;
             }
         }
         return reward;
