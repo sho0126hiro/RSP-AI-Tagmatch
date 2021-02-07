@@ -1,3 +1,5 @@
+=======
+#!/bin/sh
 find . -name "*.class" | xargs rm
 
 javac Runner.java
