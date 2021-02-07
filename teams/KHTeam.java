@@ -71,8 +71,8 @@ public class KHTeam implements Team {
                 return b.getNumOfWins() - a.getNumOfWins();
             }
         });
-        System.out.printf("[setNextAgent]");
-        System.out.println(agents);
+        // System.out.printf("[setNextAgent]");
+        // System.out.println(agents);
         // this.agentA = this.agentWithQ_learning;
         this.agentA = agents.get(0);
         this.agentB = agents.get(1);
