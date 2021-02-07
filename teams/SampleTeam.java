@@ -7,26 +7,26 @@ import common.Result;
 import common.TagTeamAction;
 
 /**
- * チームのサンプル
- * 内部通信はせず，結果も使わない
+ * チームのサンプル 内部通信はせず，結果も使わない
  */
 public class SampleTeam implements Team {
-    private SampleAgent agentA;
-    private SampleAgent agentB;
+  private SampleAgent agentA;
+  private SampleAgent agentB;
 
-    public void init(){
-        agentA = new SampleAgent(RSPEnum.PAPER);
-        agentB = new SampleAgent(RSPEnum.SCISORS);
-    }
+  public void init() {
+    agentA = new SampleAgent(RSPEnum.SCISORS);
+    agentB = new SampleAgent(RSPEnum.ROCK);
+  }
 
-    public void before(){
+  public void before() {
 
-    };
-    public void after(Result r){
-        // System.out.println(r);
-    };
+  };
 
-    public TagTeamAction getAction(){
-        return new TagTeamAction(agentA.getAction(), agentB.getAction());
-    };    
+  public void after(Result r) {
+    //System.out.println(r);
+  };
+
+  public TagTeamAction getAction() {
+    return new TagTeamAction(agentA.getAction(), agentB.getAction());
+  };
 }
