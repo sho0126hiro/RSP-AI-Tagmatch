@@ -1,1 +1,8 @@
 *.class
+*.csv
+*.iml
+*.log
+*.txt
+
+.vscode
+out
